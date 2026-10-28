@@ -376,6 +376,90 @@
       .theme-btn {padding:6px 7px}
       .brand {gap:5px;font-size:11px}
     }
+
+    /* Section Contact : boutons compacts et hiérarchisés, sans larges barres empilées. */
+    #contact .contact-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      padding: clamp(28px, 5vw, 58px);
+    }
+    #contact .contact-box > div:first-child { width: 100%; min-width: 0; }
+    #contact .contact-box h2 {
+      max-width: 900px;
+      font-size: clamp(37px, 4.7vw, 60px);
+      line-height: 1.08;
+      text-wrap: balance;
+    }
+    #contact .contact-box p {max-width: 760px;}
+    #contact .contact-actions {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px 12px;
+      width: auto;
+      max-width: 100%;
+      min-width: 0;
+      margin-top: 27px;
+    }
+    #contact .contact-actions .btn {
+      width: auto;
+      min-width: 0;
+      max-width: 100%;
+      min-height: 44px;
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 9px;
+      padding: 11px 17px;
+      line-height: 1.2;
+      font-size: 13px;
+      font-weight: 750;
+      white-space: normal;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color .16s ease, border-color .16s ease, transform .16s ease;
+    }
+    #contact .contact-actions .contact-primary {
+      color: #123a33;
+      background: #d7f3e6;
+      border: 1px solid #d7f3e6;
+    }
+    #contact .contact-actions .contact-primary:hover,
+    #contact .contact-actions .contact-primary:focus-visible {background: #ffffff;border-color: #ffffff;}
+    #contact .contact-actions .contact-secondary {
+      color: #ffffff;
+      background: transparent;
+      border: 1px solid #91bcaf;
+    }
+    #contact .contact-actions .contact-secondary:hover,
+    #contact .contact-actions .contact-secondary:focus-visible {background: rgba(255,255,255,.11);border-color: #ffffff;}
+    #contact .contact-actions .contact-social {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 44px;
+      padding: 8px 7px;
+      color: #d8f1e7;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 700;
+      text-underline-offset: 4px;
+      white-space: nowrap;
+    }
+    #contact .contact-actions .contact-social:hover {color: #ffffff;text-decoration: underline;}
+    #contact .contact-actions a:focus-visible {outline: 3px solid #e5b969;outline-offset: 3px;}
+    @media(max-width:520px) {
+      #contact .contact-box {padding: 26px 23px 30px;}
+      #contact .contact-box h2 {font-size: clamp(36px, 9.5vw, 48px);}
+      #contact .contact-actions {gap: 8px;margin-top: 22px;}
+      #contact .contact-actions .btn {font-size: 12px;padding: 11px 14px;}
+    }
   </style>
 </head>
 <body>
@@ -642,7 +726,11 @@
           <p>Je recherche des opportunités en Data Science / Machine Learning, notamment en <strong>biotech, pharma, CRO, medtech et recherche</strong>. Basée dans les Yvelines, je suis disponible immédiatement pour un poste en Île-de-France, avec télétravail accepté.</p>
           <div class="contact-details"><a href="mailto:adda.fatima@hotmail.fr" aria-label="Envoyer un e-mail à adda.fatima@hotmail.fr">adda.fatima@hotmail.fr</a></div>
           <p class="contact-meta">Yvelines (78) · Disponible immédiatement · Télétravail accepté</p></div>
-          <div class="contact-actions"><a class="btn" href="CV.pdf" download="CV_Fatima_ADDA-REZIG.pdf" type="application/pdf">Télécharger mon CV (PDF) ↓</a><a class="btn secondary-contact" href="mailto:adda.fatima@hotmail.fr">M'envoyer un e-mail ↗</a><a class="btn secondary-contact" href="https://www.linkedin.com/in/fatima-adda-rezig-72b60b164/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div>
+          <div class="contact-actions" aria-label="Actions de contact">
+            <a class="btn contact-primary" href="CV.pdf" download="CV_Fatima_ADDA-REZIG.pdf" type="application/pdf">Mon CV <span aria-hidden="true">↓</span></a>
+            <a class="btn contact-secondary" href="mailto:adda.fatima@hotmail.fr?subject=Prise%20de%20contact%20-%20Data%20Science">Échanger par e-mail <span aria-hidden="true">↗</span></a>
+            <a class="contact-social" href="https://www.linkedin.com/in/fatima-adda-rezig-72b60b164/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          </div></div>
       </section>
       <footer class="footer"><span>© <span id="year">2026</span> Fatima ADDA-REZIG · Data Scientist Machine Learning</span><span>Portfolio professionnel — CSS et JavaScript intégrés · <a href="#accueil">Retour en haut ↑</a></span></footer>
     </div>
