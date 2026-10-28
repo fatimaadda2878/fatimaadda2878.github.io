@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f6f5f0">
+  <meta name="description" content="Fatima ADDA-REZIG : Data Scientist Machine Learning en Île-de-France. 5 ans en laboratoire académique et CRO, projets ML, IA générative, MLOps et biotechnologies.">
+  <meta property="og:title" content="Fatima ADDA-REZIG — Data Scientist Machine Learning">
+  <meta property="og:description" content="Du laboratoire à la mise en production de modèles. Découvrez un projet complet de prédiction de solubilité protéique et mon parcours en data science.">
+  <title>Fatima ADDA-REZIG — Data Scientist Machine Learning</title>
+  <!-- Les polices sont l'unique ressource externe nécessaire à l'affichage. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700;750;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <script>
+    try {
+      const preference = window.localStorage.getItem('portfolio-theme-fatima');
+      if (preference === 'light' || preference === 'dark') document.documentElement.setAttribute('data-theme', preference);
+    } catch (_) { /* Le portfolio reste fonctionnel en navigation privée. */ }
+  </script>
+  <style>
+    :root {
+      font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      color-scheme: light;
+      --bg: #f6f5f0;
+      --paper: #fffcf7;
+      --panel: #eff2eb;
+      --panel-2: #e3eae4;
+      --ink: #172b2b;
+      --body: #364949;
+      --muted: #506260;
+      --line: #d1dcd5;
+      --teal: #075b52;
+      --teal-2: #117b6c;
+      --deep: #123b3a;
+      --white: #ffffff;
+      --gold: #b46a35;
+      --gold-light: #faf0e5;
+      --shadow: 0 18px 70px rgba(13, 44, 40, .075);
+      --radius: 14px;
+      --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --bg: #0c191a; --paper: #142525; --panel: #192e2c;
+        --panel-2: #213b38; --ink: #eef5f0; --body: #c6d6cf;
+        --muted: #abc3ba; --line: #36514a; --teal: #8bdcc7;
+        --teal-2: #65d0b4; --deep: #132d2b; --white: #f9fffc;
+        --gold: #e9b57b; --gold-light: #382b21;
+        --shadow: 0 20px 70px rgba(0,0,0,.23);
+      }
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #0c191a; --paper: #142525; --panel: #192e2c;
+      --panel-2: #213b38; --ink: #eef5f0; --body: #c6d6cf;
+      --muted: #abc3ba; --line: #36514a; --teal: #8bdcc7;
+      --teal-2: #65d0b4; --deep: #132d2b; --white: #f9fffc;
+      --gold: #e9b57b; --gold-light: #382b21;
+      --shadow: 0 20px 70px rgba(0,0,0,.23);
+    }
+    *,*::before,*::after {box-sizing:border-box}
+    html {scroll-behavior:smooth;scroll-padding-top:125px}
+    body {margin:0;background:var(--bg);color:var(--body);overflow-x:hidden;line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+    ::selection {background:#91cfbd;color:#092923}
+    a {color:inherit;text-decoration-thickness:1px;text-underline-offset:4px}
+    button,a {touch-action:manipulation}
+    button {font:inherit}
+    :focus-visible {outline:3px solid var(--gold);outline-offset:4px;border-radius:3px}
+    svg {max-width:100%}
+    img {max-width:100%}
+    .wrap {width:min(1160px,calc(100% - 2 * clamp(19px,5.2vw,64px)));margin-inline:auto}
+    .skip-link {position:fixed;top:-70px;left:14px;z-index:1000;padding:9px 15px;background:var(--paper);color:var(--ink)}
+    .skip-link:focus {top:10px}
+    .topbar {position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+    @supports (background: color-mix(in srgb, white 75%, transparent)) {
+      .topbar {background:color-mix(in srgb, var(--bg) 92%, transparent)}
+    }
+    .top-inner {min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand {display:flex;align-items:center;gap:12px;white-space:nowrap;text-decoration:none;color:var(--ink);font-weight:750;letter-spacing:-.04em;font-size:15px}
+    .brand-mark {display:grid;place-items:center;width:34px;height:34px;flex:none;background:var(--ink);color:var(--bg);font-family:var(--serif);font-size:16px;letter-spacing:-.09em;border-radius:9px}
+    .head-actions {display:flex;align-items:center;gap:8px}
+    .theme-btn {display:flex;align-items:center;justify-content:center;gap:7px;min-height:36px;padding:5px 12px;background:transparent;border:1px solid var(--line);border-radius:999px;color:var(--ink);cursor:pointer;font-weight:600;font-size:12px}
+    .theme-btn:hover {background:var(--panel)}
+    .header-link {font-size:12px;font-weight:750;color:var(--teal);text-decoration:none;padding:9px 10px}
+    .header-link:hover {text-decoration:underline}
+    .navrow {border-top:1px solid var(--line)}
+    .navinner {display:flex;gap:24px;align-items:center;overflow-x:auto;scrollbar-width:none;white-space:nowrap;min-height:42px}
+    .navinner::-webkit-scrollbar {display:none}
+    .navinner a {display:flex;align-items:center;height:42px;flex:none;text-decoration:none;font-size:11px;letter-spacing:.045em;font-weight:750;color:var(--muted);border-bottom:2px solid transparent}
+    .navinner a:hover,.navinner a[aria-current="location"] {color:var(--teal);border-bottom-color:var(--teal)}
+    .eyebrow {display:flex;align-items:center;gap:10px;color:var(--teal);font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:800}
+    .eyebrow::before {content:'';width:20px;height:1px;background:currentColor;flex:none}
+    .hero {display:grid;grid-template-columns:minmax(0,1.17fr) minmax(0,.83fr);gap:clamp(24px,5vw,80px);padding:80px 0 74px;align-items:center}
+    .hero h1 {color:var(--ink);font:500 clamp(50px,6.5vw,88px)/.99 var(--serif);letter-spacing:-.052em;margin:23px 0 21px}
+    .hero h1 em {font-weight:400;color:var(--teal);font-style:italic}
+    .hero-desc {font-size:clamp(16px,1.65vw,19px);max-width:630px;line-height:1.66;color:var(--body);margin:0}
+    .hero-desc strong {color:var(--ink)}
+    .hero-name {margin-top:22px;font-weight:750;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+    .actions {display:flex;flex-wrap:wrap;gap:11px;margin-top:27px}
+    .btn {display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 18px;border:1px solid var(--teal);border-radius:8px;text-decoration:none;font-weight:750;font-size:13px;min-height:44px;transition:transform .15s ease,background .15s ease}
+    .btn:hover {transform:translateY(-2px)}
+    .btn-main {background:var(--teal);color:var(--bg)}
+    .btn-line {color:var(--teal);background:transparent}
+    .btn-line:hover {background:var(--panel)}
+    .hero-visual {position:relative;min-height:434px;display:flex;flex-direction:column;justify-content:center;padding:21px}
+    .visual-frame {position:relative;min-height:386px;display:grid;place-items:center;background:var(--panel);border:1px solid var(--line);border-radius:200px 200px 15px 15px;overflow:hidden}
+    .visual-frame::before,.visual-frame::after {content:'';position:absolute;border:1px solid var(--line);border-radius:50%;inset:40px 10px 15px 10px;opacity:.75}
+    .visual-frame::after {inset:90px -90px -80px -90px}
+    .hero-fold {width:min(93%,430px);height:auto;position:relative;z-index:1;overflow:visible}
+    .fold-back {fill:none;stroke:var(--teal);stroke-width:18;opacity:.18;stroke-linecap:round}
+    .fold-outer {fill:none;stroke:var(--teal);stroke-width:11;stroke-linecap:round;stroke-linejoin:round}
+    .fold-inner {fill:none;stroke:var(--gold);stroke-width:9;stroke-linecap:round;stroke-linejoin:round}
+    .fold-highlight {fill:none;stroke:var(--paper);stroke-width:2;opacity:.8;stroke-linecap:round}
+    .visual-caption {position:absolute;z-index:2;bottom:31px;left:24px;right:24px;display:flex;align-items:center;justify-content:space-between;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:750}
+    .visual-caption span:last-child {font-variant-numeric:tabular-nums}
+    .stats {display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:90px}
+    .stat {padding:21px 20px 21px 0;min-height:105px;border-right:1px solid var(--line)}
+    .stat:not(:first-child) {padding-left:20px}
+    .stat:last-child {border-right:0}
+    .stat-value {display:block;color:var(--ink);font:500 clamp(25px,3vw,39px)/1.1 var(--serif);letter-spacing:-.035em;margin-bottom:8px}
+    .stat-label {font-size:11px;font-weight:650;color:var(--muted);line-height:1.45}
+    .section {padding-block:46px 84px;scroll-margin-top:120px}
+    .section + .section {border-top:1px solid var(--line)}
+    .section-top {display:flex;align-items:flex-start;justify-content:space-between;gap:26px;margin-bottom:33px}
+    .section-num {color:var(--muted);font-size:11px;font-weight:800;letter-spacing:.16em;padding-top:9px;white-space:nowrap}
+    .section h2 {font:500 clamp(36px,4.2vw,57px)/1.03 var(--serif);letter-spacing:-.042em;color:var(--ink);margin:10px 0 0}
+    .section-intro {font-size:15px;line-height:1.75;max-width:740px;margin:4px 0 0}
+    .two-col {display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,70px)}
+    .about-big {color:var(--ink);font:500 clamp(25px,3.2vw,36px)/1.25 var(--serif);letter-spacing:-.025em;margin:0}
+    .about-copy p {margin:0 0 16px}
+    .about-copy strong {color:var(--ink)}
+    .mini-columns {display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+    .fact {background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:17px}
+    .fact .small {display:block;text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:750;color:var(--muted);margin-bottom:4px}
+    .fact strong {color:var(--ink);font-size:13px}
+    .featured {position:relative;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);overflow:hidden}
+    .feature-top {display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:25px;padding:clamp(24px,4vw,47px);border-bottom:1px solid var(--line)}
+    .featured-label {display:inline-flex;gap:8px;align-items:center;padding:7px 11px;border-radius:30px;background:var(--panel);color:var(--teal);font-weight:800;font-size:10px;letter-spacing:.10em;text-transform:uppercase}
+    .feature-top h3 {font:500 clamp(32px,4.2vw,56px)/1.07 var(--serif);letter-spacing:-.042em;margin:19px 0 17px;color:var(--ink)}
+    .feature-top p {max-width:610px;margin:0 0 15px}
+    .feature-top p strong {color:var(--ink)}
+    .feature-links {margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+    .feature-note {color:var(--muted);font-size:11px;margin-top:8px!important}
+    .model-graphic {border-radius:12px;background:var(--deep);color:#e9f6f0;padding:25px 19px;align-self:stretch;display:flex;flex-direction:column;justify-content:space-between;min-height:295px}
+    .model-graphic .caption {font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:#b7d6ca}
+    .sequence {word-wrap:break-word;overflow-wrap:anywhere;font-family:ui-monospace,'SFMono-Regular',monospace;font-size:12px;letter-spacing:.08em;line-height:2;color:#c0e8db;margin:18px 0;max-width:260px}
+    .graphic-arrow {height:23px;width:1px;background:#a5c7b7;margin:0 auto 0 23px;position:relative}
+    .graphic-arrow::after {content:'⌄';position:absolute;bottom:-15px;left:-4px}
+    .graph-box {border:1px solid rgba(224,251,238,.36);padding:12px;margin-top:12px;border-radius:8px;font-size:11px;line-height:1.4}
+    .graph-box strong {display:block;color:#fff;font-size:14px;margin-bottom:2px}
+    .feature-block {padding:clamp(22px,3.4vw,42px);border-bottom:1px solid var(--line)}
+    .feature-block:last-child {border:0}
+    .block-label {color:var(--teal);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;margin:0 0 19px}
+    .steps {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px}
+    .step {position:relative;padding:16px 13px 16px;border:1px solid var(--line);border-radius:9px;background:var(--bg)}
+    .step-no {display:flex;align-items:center;gap:9px;color:var(--teal);font-weight:800;letter-spacing:.11em;font-size:11px}
+    .step-no::after {content:'';display:block;height:1px;background:var(--line);flex:1}
+    .step h4 {font-size:13px;line-height:1.35;color:var(--ink);margin:14px 0 8px}
+    .step p {font-size:11.5px;line-height:1.56;margin:0}
+    .feature-split {display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    .feature-split h4 {color:var(--ink);font-size:14px;margin:0 0 8px}
+    .clean-list {margin:0;padding-left:19px}
+    .clean-list li {padding-bottom:9px}
+    .technology {display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+    .chip {display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:5px;padding:5px 8px;font-size:10.5px;font-weight:700;color:var(--muted)}
+    .metrics {display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:13px}
+    .metric {background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px}
+    .metric .number {display:block;font:500 clamp(34px,4.5vw,52px)/1 var(--serif);letter-spacing:-.035em;color:var(--ink)}
+    .metric .unit {color:var(--teal);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;display:block;margin-top:10px}
+    .metric p {font-size:11.5px;line-height:1.58;margin:7px 0 0}
+    .auc-track {height:7px;border-radius:5px;background:var(--line);margin-top:18px;position:relative}
+    .auc-range {position:absolute;left:0;width:66%;height:100%;background:var(--teal);border-radius:5px}
+    .range-labels {display:flex;justify-content:space-between;font-size:10px;font-weight:700;margin-top:5px;color:var(--muted)}
+    .decision-box {padding:24px;background:var(--gold-light);border-left:3px solid var(--gold);border-radius:0 8px 8px 0}
+    .decision-box h4 {color:var(--ink);margin:0 0 8px;font-size:16px}
+    .decision-box p {margin:0 0 9px}
+    .decision-box p:last-child {margin:0}
+    .decision-row {display:grid;grid-template-columns:1.03fr .97fr;gap:30px;align-items:start}
+    .cost-grid {display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:17px}
+    .cost-mini {border:1px solid var(--line);padding:17px;border-radius:9px;background:var(--paper)}
+    .cost-mini strong {display:block;font:500 30px/1.1 var(--serif);color:var(--ink)}
+    .cost-mini small {display:block;line-height:1.4;margin-top:7px;color:var(--muted)}
+    .mini-label {font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.11em;color:var(--teal);margin:0 0 12px}
+    .pivot {display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:15px;margin:22px 0}
+    .pivot-card {border:1px solid var(--line);border-radius:10px;padding:18px;min-height:134px;background:var(--bg)}
+    .pivot-card span {font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:800}
+    .pivot-card strong {display:block;font-size:15px;line-height:1.4;margin:11px 0 7px;color:var(--ink)}
+    .pivot-card p {margin:0;font-size:12px}
+    .pivot-arr {font-size:23px;color:var(--teal);font-family:var(--serif)}
+    .filterbar {display:flex;flex-wrap:wrap;gap:8px;margin:25px 0 12px}
+    .filter-btn {padding:9px 13px;border-radius:40px;cursor:pointer;border:1px solid var(--line);background:var(--paper);color:var(--body);font-weight:750;font-size:12px;min-height:40px}
+    .filter-btn:hover,.filter-btn[aria-pressed="true"] {background:var(--teal);border-color:var(--teal);color:var(--bg)}
+    .project-status {font-size:11px;letter-spacing:.02em;color:var(--muted);font-weight:650;min-height:23px}
+    .projects-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:10px}
+    .p-card {border:1px solid var(--line);background:var(--paper);border-radius:10px;min-height:168px;padding:19px;display:flex;flex-direction:column;justify-content:space-between}
+    .p-card[hidden] {display:none}
+    .p-card:hover {border-color:var(--teal)}
+    .p-card .p-no {font:500 34px/.95 var(--serif);letter-spacing:-.02em;color:var(--teal)}
+    .p-card h3 {font-size:14px;line-height:1.45;color:var(--ink);margin:13px 0 10px}
+    .p-card .p-kind {font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:700}
+    .footnote {color:var(--muted);font-size:12px;margin-top:18px}
+    .skills-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+    .skill-panel {background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:23px}
+    .skill-panel h3 {font-size:15px;color:var(--ink);margin:0 0 18px}
+    .skill-row {display:grid;grid-template-columns:minmax(0,1fr) 102px 15px;align-items:center;gap:10px;margin:13px 0;line-height:1.3}
+    .skill-title {font-size:11.8px;color:var(--body);font-weight:600}
+    .skill-level {font-size:11px;text-align:right;font-weight:800;font-variant-numeric:tabular-nums;color:var(--teal)}
+    .segments {display:flex;gap:3px;align-items:center}
+    .segment {height:7px;border-radius:2px;background:var(--line);flex:1}
+    .segment.filled {background:var(--teal)}
+    .scale {display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:21px;color:var(--muted);font-size:11px}
+    .scale span b {color:var(--ink)}
+    .soft-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+    .soft-card {background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:23px}
+    .soft-card h3 {font:500 23px/1.2 var(--serif);letter-spacing:-.02em;color:var(--ink);margin:0 0 16px}
+    .soft-pair {display:grid;grid-template-columns:53px 1fr;gap:9px;font-size:12px;line-height:1.65;margin:9px 0}
+    .soft-pair strong {text-transform:uppercase;letter-spacing:.06em;font-size:10px;color:var(--teal);padding-top:3px}
+    .retrospective {display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .retro-card {padding:26px;border-radius:10px;border:1px solid var(--line);background:var(--paper)}
+    .retro-card.strong {background:var(--panel);border-color:var(--teal)}
+    .retro-card small {display:block;text-transform:uppercase;letter-spacing:.11em;font-weight:800;color:var(--muted);margin-bottom:16px}
+    .retro-card p {font:500 clamp(20px,2.6vw,29px)/1.35 var(--serif);letter-spacing:-.018em;color:var(--ink);margin:0}
+    .reflection {margin-top:24px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .reflection h3 {font-size:14px;color:var(--ink);margin:0 0 9px}
+    .reflection p {margin:0;font-size:12.5px;line-height:1.7}
+    .market-layout {display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(22px,5vw,67px)}
+    .market-bar {display:grid;grid-template-columns:120px 1fr 44px;gap:14px;align-items:center;margin:19px 0}
+    .market-bar-name {color:var(--ink);font-size:12px;font-weight:750}
+    .market-bar-track {height:13px;border-radius:3px;background:var(--panel-2);overflow:hidden}
+    .market-bar-value {height:100%;border-radius:3px;background:var(--teal);transform-origin:left}
+    .market-bar-pct {text-align:right;color:var(--teal);font-variant-numeric:tabular-nums;font-weight:800;font-size:13px}
+    .market-note {font-size:11px;color:var(--muted);line-height:1.65;margin-top:17px}
+    .market-copy {border-left:1px solid var(--line);padding-left:24px}
+    .market-copy h3 {color:var(--ink);font:500 27px/1.15 var(--serif);margin:0 0 14px}
+    .market-copy p {margin:0 0 13px}
+    .contact-box {background:var(--deep);color:#d3ebe2;border-radius:var(--radius);padding:clamp(25px,5vw,57px);display:grid;grid-template-columns:1fr auto;align-items:end;gap:22px}
+    .contact-box .eyebrow {color:#98ddc6}
+    .contact-box h2 {font:500 clamp(36px,5vw,58px)/1.06 var(--serif);color:#fff;margin:16px 0}
+    .contact-box p {max-width:590px;margin:0;color:#d0e2d9}
+    .contact-actions {display:flex;flex-direction:column;gap:9px;min-width:178px}
+    .contact-actions .btn {border-color:#cde8dd;color:#0b2c29;background:#d7f3e6}
+    .contact-actions .btn:last-child {background:transparent;color:#e4f5ed}
+    .footer {display:flex;justify-content:space-between;align-items:center;gap:16px;padding:28px 0 40px;color:var(--muted);font-size:11px}
+    .footer a {color:var(--teal);font-weight:750}
+    .tiny-divider {height:1px;background:var(--line);margin:24px 0}
+    @media (max-width:980px) {
+      .hero {grid-template-columns:1.15fr .85fr;gap:20px}
+      .hero-visual {padding:0}
+      .visual-frame {min-height:360px}
+      .steps {grid-template-columns:repeat(3,1fr)}
+      .projects-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+      .feature-top {grid-template-columns:1.2fr .8fr}
+    }
+    @media (max-width:720px) {
+      html {scroll-padding-top:117px}
+      .hero {grid-template-columns:1fr;gap:30px;padding:60px 0 47px}
+      .hero h1 {font-size:clamp(49px,10vw,73px)}
+      .hero-visual {min-height:270px}
+      .visual-frame {min-height:300px;border-radius:140px 140px 13px 13px}
+      .hero-fold {width:min(72%,325px)}
+      .stats {grid-template-columns:repeat(2,1fr);margin-bottom:52px}
+      .stat:nth-child(2) {border-right:0}
+      .stat:nth-child(n+3) {border-top:1px solid var(--line)}
+      .stat:nth-child(3) {padding-left:0}
+      .section {padding:42px 0 66px}
+      .two-col,.feature-top,.feature-split,.decision-row,.market-layout {grid-template-columns:1fr}
+      .model-graphic {min-height:250px}
+      .metrics {grid-template-columns:1fr 1fr}
+      .metrics .metric:last-child {grid-column:1/-1}
+      .skills-grid,.soft-grid,.retrospective {grid-template-columns:1fr}
+      .reflection {grid-template-columns:1fr;gap:19px}
+      .market-copy {border-left:none;border-top:1px solid var(--line);padding:23px 0 0}
+      .contact-box {grid-template-columns:1fr}
+      .contact-actions {flex-direction:row;flex-wrap:wrap}
+    }
+    @media (max-width:520px) {
+      .brand {font-size:13px;gap:8px}
+      .brand-mark {width:30px;height:30px}
+      .header-link {display:none}
+      .top-inner {min-height:58px}
+      .navinner {gap:18px}
+      .hero h1 {font-size:clamp(47px,13.4vw,66px)}
+      .section h2 {font-size:clamp(35px,9vw,47px)}
+      .section-top {gap:10px}
+      .section-num {font-size:10px}
+      .steps,.projects-grid {grid-template-columns:1fr}
+      .step {min-height:110px}
+      .p-card {min-height:137px}
+      .metrics {grid-template-columns:1fr}
+      .metrics .metric:last-child {grid-column:auto}
+      .mini-columns {grid-template-columns:1fr}
+      .feature-block {padding:21px 19px}
+      .feature-top {padding:22px 19px}
+      .cost-grid {grid-template-columns:1fr 1fr}
+      .pivot {grid-template-columns:1fr;gap:8px}
+      .pivot-arr {transform:rotate(90deg);text-align:center;font-size:28px}
+      .market-bar {grid-template-columns:94px 1fr 38px;gap:10px}
+      .skill-panel {padding:19px 15px}
+      .footer {flex-direction:column;align-items:flex-start}
+    }
+    @media (max-width:380px) {
+      .wrap {width:calc(100% - 32px)}
+      .brand {font-size:12px}
+      .theme-btn {font-size:0;padding:6px 9px;min-width:34px}
+      .theme-btn svg {flex:none}
+      .hero h1 {font-size:46px}
+      .skill-row {grid-template-columns:minmax(0,1fr) 85px 12px;gap:6px}
+      .cost-grid {grid-template-columns:1fr}
+      .stats .stat {padding-right:9px}
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html {scroll-behavior:auto}
+      *,*::before,*::after {scroll-behavior:auto!important;transition:none!important;animation:none!important}
+    }
+    @media print {
+      :root {color-scheme:light;--bg:#fff;--paper:#fff;--panel:#f2f5f1;--ink:#152c28;--body:#233a36;--muted:#50625e;--line:#cfd6d3;--teal:#075b52}
+      .topbar,.actions,.feature-links,.contact-actions,.filterbar,.skip-link {display:none!important}
+      body {background:#fff;font-size:10pt}
+      .wrap {width:100%}
+      .hero {padding:10px 0}
+      .hero-visual {display:none}
+      .section {break-inside:auto;padding:18px 0 32px}
+      .featured,.metric,.skill-panel,.soft-card,.p-card {box-shadow:none;break-inside:avoid}
+      .p-card[hidden] {display:flex}
+      a {text-decoration:none}
+    }
+
+    /* Recrutement : repères, pièces jointes autonomes et preuves projets. */
+    .header-cv {display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;min-height:36px;border-radius:6px;background:var(--teal);color:var(--bg);font-size:11px;text-decoration:none;font-weight:800;white-space:nowrap}
+    .header-cv:hover {filter:brightness(1.15)}
+    .hero-availability {display:flex;flex-wrap:wrap;gap:7px 11px;margin:18px 0 0;padding:0;list-style:none;font-size:12px;font-weight:700;color:var(--teal)}
+    .hero-availability li {display:flex;align-items:center;gap:9px}
+    .hero-availability li:not(:last-child)::after {content:'·';color:var(--muted)}
+    .hero-mail {margin:12px 0 2px;font-weight:750;font-size:13px;overflow-wrap:anywhere}
+    .hero-mail a {color:var(--teal);text-decoration-thickness:1px;text-underline-offset:4px}
+    .hero-mail a:hover {text-decoration-thickness:2px}
+    .focus-line {font-size:12px;color:var(--muted);line-height:1.6;margin-top:14px}
+    .focus-line strong {color:var(--ink)}
+    .btn-document {background:var(--paper);border-color:var(--line);color:var(--ink)}
+    .btn-document:hover {background:var(--panel)}
+    .contact-details {display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:21px;align-items:center}
+    .contact-details a {color:#ecfff6;font-size:14px;font-weight:750;overflow-wrap:anywhere}
+    .contact-details a:hover {text-decoration-thickness:2px}
+    .contact-meta {margin-top:13px!important;font-size:12px;color:#b9d8cc!important}
+    .contact-actions {min-width:206px}
+    .contact-actions .btn {text-align:center}
+    .contact-actions .btn.secondary-contact {background:transparent;color:#e4f5ed}
+    .contact-actions .btn:last-child {background:transparent;color:#e4f5ed}
+    .p-card {min-height:241px;gap:15px}
+    .p-card h3 {margin-top:8px;margin-bottom:10px}
+    .p-kind {letter-spacing:.065em}
+    .p-desc {font-size:12px;line-height:1.6;color:var(--body);margin:0 0 10px}
+    .p-proof {margin:11px 0 0;padding-left:10px;border-left:2px solid var(--teal);font-size:11.5px;line-height:1.5;color:var(--ink)}
+    .p-bottom {display:flex;align-items:flex-end;gap:10px;justify-content:space-between;flex-wrap:wrap}
+    .p-tags {display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
+    .p-tags span {font-size:10px;font-weight:700;color:var(--muted);background:var(--panel);border-radius:4px;padding:4px 6px}
+    .project-verified {font-size:10px;color:var(--teal);font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    .project-link {font-size:11px;font-weight:800;color:var(--teal)}
+    .projects-help {margin:0 0 8px;font-size:12px}
+    .stat-value.stat-small {font-size:clamp(24px,2.7vw,36px)}
+    @media (max-width:720px) { .contact-actions {min-width:0} }
+    @media (max-width:520px) {
+      .header-cv {padding:8px 10px;font-size:10px}
+      .hero-availability {font-size:11px}
+      .hero-availability li::after {display:none}
+      .contact-details {display:block}
+      .contact-details a {display:block;margin-top:10px}
+      .p-card {min-height:0}
+    }
+    @media (max-width:380px) {
+      .top-inner {gap:7px}
+      .header-cv {padding:7px 8px;font-size:9px;min-height:34px}
+      .theme-btn {padding:6px 7px}
+      .brand {gap:5px;font-size:11px}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+  <header class="topbar">
+    <div class="wrap top-inner">
+      <a class="brand" href="#accueil" aria-label="Fatima ADDA-REZIG, retour à l'accueil"><span class="brand-mark" aria-hidden="true">FA</span><span>Fatima ADDA-REZIG</span></a>
+      <div class="head-actions">
+<a class="header-cv" href="CV.pdf" download="CV_Fatima_ADDA-REZIG.pdf" type="application/pdf" aria-label="Télécharger mon CV PDF">CV PDF ↓</a>
+        <a class="header-link" href="https://github.com/fatimaadda2878" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a class="header-link" href="https://www.linkedin.com/in/fatima-adda-rezig-72b60b164/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <button class="theme-btn" id="themeToggle" type="button" aria-label="Changer le thème de couleur" title="Basculer entre thème clair et sombre">
+          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20.7 13A9 9 0 0 1 11 3.3 9 9 0 1 0 20.7 13Z"/></svg><span id="themeLabel">Thème</span>
+        </button>
+      </div>
+    </div>
+    <nav class="navrow" aria-label="Navigation du portfolio"><div class="wrap navinner">
+      <a href="#a-propos">À propos</a><a href="#projet-phare">Projet phare</a><a href="#projets">12 projets</a><a href="#competences">Compétences</a><a href="#savoir-etre">Savoir-être</a><a href="#recul">Prise de recul</a><a href="#marche">Marché</a><a href="#contact">Contact</a>
+    </div></nav>
+  </header>
+  <main id="contenu">
+    <div class="wrap">
+      <section class="hero" id="accueil" aria-labelledby="hero-heading">
+        <div>
+          <div class="eyebrow">Data science × sciences du vivant</div>
+          <p class="hero-name">Fatima ADDA-REZIG · Data Scientist Machine Learning</p>
+          <h1 id="hero-heading">Du laboratoire<br>aux <em>décisions</em><br>fondées sur les données.</h1>
+          <p class="hero-desc">Ingénieure biochimiste pendant cinq ans, aujourd'hui formée à la data science. <strong>Je relie l'expertise scientifique de terrain à la construction, l'évaluation et la mise en production de modèles.</strong> Mon critère : leur utilité réelle, pas seulement leur score.</p>
+          <ul class="hero-availability" aria-label="Zone géographique et disponibilité">
+            <li>Yvelines (78) · Île-de-France</li>
+            <li>Opportunités en Île-de-France · télétravail accepté</li>
+            <li>Disponible immédiatement</li>
+          </ul>
+          <p class="hero-mail"><a href="mailto:adda.fatima@hotmail.fr" aria-label="Écrire à Fatima ADDA-REZIG">adda.fatima@hotmail.fr <span aria-hidden="true">↗</span></a></p>
+          <p class="focus-line"><strong>Mes secteurs :</strong> biotechnologies, pharma, CRO, medtech et recherche.</p>
+          <div class="actions">
+            <a class="btn btn-main" href="#projet-phare">Découvrir mon projet phare <span aria-hidden="true">↘</span></a>
+            <a class="btn btn-document" href="CV.pdf" download="CV_Fatima_ADDA-REZIG.pdf" type="application/pdf">Télécharger mon CV <span aria-hidden="true">↓</span></a>
+            <a class="btn btn-line" href="mailto:adda.fatima@hotmail.fr">M'écrire <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-frame">
+            <svg class="hero-fold" viewBox="0 0 400 400" role="img" aria-label="Illustration scientifique abstraite d'une chaîne protéique repliée, en vert pétrole et ocre">
+              <path class="fold-back" d="M76 161 C123 94 201 68 278 114 S324 228 277 262 159 270 135 214 164 139 218 148 281 195 248 233 179 238 168 196 194 164 232 181"/>
+              <path class="fold-outer" d="M46 238 C71 204 71 156 108 122 S200 74 251 96 331 166 319 221 241 291 193 285 132 259 131 215 151 138 215 143 290 199 264 232 201 256 172 223 194 173 221 189"/>
+              <path class="fold-inner" d="M110 122 C117 155 143 160 163 150 S188 101 223 110 278 148 273 178 243 213 226 200 225 174 255 183 307 229 285 261 220 297 189 281"/>
+              <path class="fold-highlight" d="M48 237 C78 193 79 157 108 124 S200 80 249 99"/>
+              <g fill="var(--gold)"><circle cx="46" cy="238" r="8"/><circle cx="318" cy="221" r="7"/><circle cx="188" cy="281" r="7"/></g>
+              <g fill="var(--teal)"><circle cx="108" cy="122" r="6"/><circle cx="224" cy="111" r="6"/><circle cx="219" cy="188" r="5"/></g>
+              <g fill="none" stroke="var(--muted)" stroke-opacity=".45" stroke-width="1"><ellipse cx="202" cy="195" rx="164" ry="113" transform="rotate(-27 202 195)"/><ellipse cx="202" cy="195" rx="104" ry="160" transform="rotate(35 202 195)"/></g>
+              <g fill="var(--ink)"><circle cx="46" cy="104" r="2.5"/><circle cx="328" cy="105" r="3"/><circle cx="358" cy="291" r="2"/><circle cx="93" cy="310" r="2"/></g>
+            </svg>
+            <div class="visual-caption"><span>Structure • séquence • fonction</span><span>01 / 01</span></div>
+          </div>
+        </div>
+      </section>
+      <div class="stats" aria-label="Repères de parcours">
+        <div class="stat"><span class="stat-value">5 ans</span><div class="stat-label">d'expérience en biochimie expérimentale</div></div>
+        <div class="stat"><span class="stat-value">13</span><div class="stat-label">projets dans le parcours OpenClassrooms</div></div>
+        <div class="stat"><span class="stat-value stat-small">En ligne</span><div class="stat-label">1 démonstrateur public, de la séquence à la décision</div></div>
+        <div class="stat"><span class="stat-value stat-small">Immédiate</span><div class="stat-label">disponibilité pour une prise de poste</div></div>
+      </div>
+      <section class="section" id="a-propos" aria-labelledby="about-title">
+        <div class="section-top"><div><div class="eyebrow">Positionnement</div><h2 id="about-title">Une double culture,<br>un même niveau d'exigence.</h2></div><span class="section-num">01 / 08</span></div>
+        <div class="two-col">
+          <p class="about-big">« Je sais ce que coûte un résultat inexploitable. Je sais aussi qu'un bon modèle statistique n'est pas forcément une bonne décision métier. »</p>
+          <div class="about-copy"><p>J'ai exercé pendant <strong>cinq ans en recherche académique puis en CRO</strong>, au contact de contraintes concrètes : qualité des échantillons, résultats reproductibles, délais et attentes de clients industriels. Ma spécialité était l'<strong>expression et la purification de protéines recombinantes</strong>.</p><p>Ma reconversion avec OpenClassrooms m'a permis d'élargir ce raisonnement aux données : préparation, modélisation, évaluation, déploiement et suivi. Je cherche à appliquer ces compétences à des problèmes où le dialogue entre science et informatique fait la différence.</p>
+            <div class="mini-columns"><div class="fact"><span class="small">Avant</span><strong>Laboratoire académique & CRO</strong></div><div class="fact"><span class="small">Aujourd'hui</span><strong>Data Scientist Machine Learning</strong></div></div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="projet-phare" aria-labelledby="flagship-title">
+        <div class="section-top"><div><div class="eyebrow">Étude de cas · projet phare</div><h2 id="flagship-title">Prédire avant de produire.</h2></div><span class="section-num">02 / 08</span></div>
+        <article class="featured" aria-label="Étude de cas complète : solubilité des protéines recombinantes">
+          <div class="feature-top"><div>
+            <span class="featured-label">Machine Learning · Bioinformatique · Conduite de projet</span>
+            <h3>La solubilité des protéines recombinantes, avant les essais.</h3>
+            <p><strong>Le problème :</strong> une construction peut être prometteuse sur le papier, mais produire trop peu de protéine soluble pour être exploitable. On ne le découvre parfois qu'après plusieurs jours de cultures, de purification et d'analyses.</p>
+            <p><strong>Ma réponse :</strong> un démonstrateur dans lequel on colle une séquence et qui renvoie un score de solubilité, une identification via PDB/UniProt lorsqu'une correspondance est fiable, puis des essais d'expression et de purification à comparer — avec leurs justifications et leurs limites.</p>
+            <div class="feature-links">
+              <a class="btn btn-main" href="https://huggingface.co/spaces/fatimaadda2878/protein-solubility-esm150-ft" target="_blank" rel="noopener noreferrer">Essayer la démo <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-line" href="https://github.com/fatimaadda2878/protein-solubility-api" target="_blank" rel="noopener noreferrer">Voir le code <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-document" href="Rapport.pdf" download="Rapport_metier_Fatima_ADDA-REZIG.pdf" type="application/pdf">Lire le rapport métier (PDF) <span aria-hidden="true">↓</span></a>
+            </div>
+            <p class="feature-note">L'espace Hugging Face peut mettre quelques secondes à se réveiller.</p>
+          </div>
+          <div class="model-graphic" role="img" aria-label="Parcours d'une séquence de protéine vers un modèle de prédiction, puis un score et un plan expérimental argumenté">
+            <div><div class="caption">Du signal au choix expérimental</div><div class="sequence" aria-hidden="true">MKTAYIAKQRQISFVKSHFSRQDILDLIWYHTQGYFP...</div><div class="graphic-arrow" aria-hidden="true"></div><div class="graph-box"><strong>Modèle de solubilité</strong>ESM-2 adapté + paramètres biochimiques</div><div class="graphic-arrow" aria-hidden="true"></div><div class="graph-box"><strong>Score + contexte biologique</strong>Identification PDB / UniProt lorsque fiable</div><div class="graphic-arrow" aria-hidden="true"></div><div class="graph-box"><strong>Plan d'essais comparatifs</strong>Tags · hôtes · conditions · contrôles</div></div>
+          </div></div>
+          <div class="feature-block">
+            <p class="block-label">La démarche, de bout en bout</p>
+            <div class="steps">
+              <div class="step"><div class="step-no">01</div><h4>Cadrage métier</h4><p>Besoins, parties prenantes, quatre critères pondérés pour prioriser les cas d'usage.</p></div>
+              <div class="step"><div class="step-no">02</div><h4>Données fiables</h4><p>62 478 séquences DeepSol, cinq partitions distinctes et contrôle de l'apparentement par MMseqs2.</p></div>
+              <div class="step"><div class="step-no">03</div><h4>Comparaison ML</h4><p>LightGBM, ESM-2 35M/150M/650M, Optuna, puis adaptation partielle d'ESM-2 150M et Bio13.</p></div>
+              <div class="step"><div class="step-no">04</div><h4>Livraison</h4><p>Gradio sur Hugging Face Spaces, versionnement Git, tests GitHub Actions, poids privés.</p></div>
+              <div class="step"><div class="step-no">05</div><h4>Audit & décision</h4><p>Mesures exploratoires, coût des erreurs, limites de généralisation et proposition de pilote indépendant.</p></div>
+            </div>
+          </div>
+          <div class="feature-block">
+            <div class="feature-split"><div>
+              <p class="block-label">Ce que j'ai mis sous contrôle</p>
+              <h4>Cinq jeux, cinq fonctions distinctes</h4>
+              <ul class="clean-list"><li><strong>Apprentissage :</strong> entraîner le modèle.</li><li><strong>Comparaison :</strong> choisir les architectures (Tune).</li><li><strong>Calibration :</strong> transformer le score brut en probabilité.</li><li><strong>Seuil :</strong> choisir une règle de décision métier.</li><li><strong>Réserve :</strong> limiter les évaluations opportunistes.</li></ul>
+              <p class="footnote">La séparation des familles de séquences apparentées a été recherchée avec MMseqs2 pour limiter les fuites de données ; ce contrôle n'en garantit pas l'absence absolue.</p>
+            </div><div>
+              <p class="block-label">Choix techniques</p>
+              <h4>Comparer avant de complexifier</h4>
+              <p>J'ai testé les descripteurs classiques, plusieurs tailles de modèles de langage protéique figés et l'optimisation des hyperparamètres. <strong>Le gain déterminant est venu du fine-tuning partiel d'ESM-2 150M</strong>, combiné à 13 descripteurs biochimiques.</p>
+              <div class="technology" aria-label="Technologies utilisées"><span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">ESM-2</span><span class="chip">LightGBM</span><span class="chip">Optuna</span><span class="chip">MMseqs2</span><span class="chip">MLflow</span><span class="chip">Gradio</span><span class="chip">Hugging Face</span><span class="chip">Docker</span><span class="chip">GitHub Actions</span></div>
+            </div></div>
+          </div>
+          <div class="feature-block">
+            <p class="block-label">Résultats mesurés sur le jeu de mise au point · 4 052 protéines</p>
+            <div class="metrics">
+              <div class="metric"><span class="number">0,83</span><span class="unit">AUC ROC</span><p>Capacité à distinguer deux classes : 0,5 équivaut au hasard et 1,0 à une séparation parfaite.</p><div class="auc-track" role="img" aria-label="AUC ROC 0,83 sur une échelle de 0,50 à 1,00"><span class="auc-range"></span></div><div class="range-labels"><span>0,50 · hasard</span><span>1,00 · parfait</span></div></div>
+              <div class="metric"><span class="number">0,79</span><span class="unit">PR-AUC</span><p>Synthèse du compromis entre précision et rappel pour la classe « soluble ».</p></div>
+              <div class="metric"><span class="number">22 j</span><span class="unit">3–24 juillet 2026</span><p>Première chaîne construite sur 22 jours calendaires. Démonstrateur livré le 25 octobre 2026.</p></div>
+            </div>
+            <p class="footnote">Les résultats ci-dessus sont exploratoires : ils ne constituent pas une mesure indépendante de généralisation du modèle livré.</p>
+          </div>
+          <div class="feature-block">
+            <p class="block-label">Ce que l'audit change dans ma décision</p>
+            <div class="decision-row">
+              <div>
+                <h4>Les bonnes métriques ne suffisent pas.</h4>
+                <p>J'ai choisi une fonction de coût qui pénalise davantage une bonne cible écartée qu'une tentative de production inutile. Ce choix privilégie la <strong>récupération des cibles prometteuses</strong> plutôt que la réduction maximale des essais.</p>
+                <div class="cost-grid"><div class="cost-mini"><strong>1 200 €</strong><small>Faux négatif : bonne protéine écartée</small></div><div class="cost-mini"><strong>600 €</strong><small>Faux positif : essai inutile</small></div></div>
+                <p class="footnote">Ce sont des hypothèses métier, pas des coûts comptables mesurés.</p>
+              </div>
+              <div class="decision-box"><h4>Ma décision : démonstrateur terminé, validation terrain indispensable.</h4><p>Je ne recommande pas d'engager des expériences coûteuses uniquement sur la base du score. La prochaine étape est un <strong>pilote biologique indépendant</strong>, avec coûts et critères de succès définis avant les essais.</p><p>Si la priorité devient strictement de réduire les essais inutiles, la pondération des erreurs doit être discutée, voire inversée.</p></div>
+            </div>
+          </div>
+          <div class="feature-block">
+            <p class="block-label">Une décision de pilotage assumée</p>
+            <h4>J'ai changé de cap sans perdre le travail d'industrialisation.</h4>
+            <div class="pivot"><div class="pivot-card"><span>Phase initiale</span><strong>LightGBM · FastAPI · Docker · CI/CD</strong><p>Construire une chaîne de prédiction reproductible et déployable.</p></div><div class="pivot-arr" aria-hidden="true">→</div><div class="pivot-card"><span>Version livrée</span><strong>ESM-2 adapté · Gradio · PDB/UniProt</strong><p>Améliorer la discrimination et la compréhension des décisions par l'utilisateur.</p></div></div>
+            <p>Les briques MLOps développées initialement sont <strong>conservées dans l'historique du dépôt</strong>. Le changement de priorité répond à l'analyse des résultats, pas à un abandon technique.</p>
+          </div>
+        </article>
+      </section>
+      <section class="section" id="projets" aria-labelledby="projects-title">
+        <div class="section-top"><div><div class="eyebrow">Formation OpenClassrooms</div><h2 id="projects-title">Douze projets.<br>Quatre familles de compétences.</h2></div><span class="section-num">03 / 08</span></div>
+        <p class="section-intro">Douze projets de formation, chacun associé à un problème et à des méthodes mobilisées. Les résultats quantifiés ne sont indiqués que lorsqu'ils sont documentés ; le treizième projet est ce portfolio.</p>
+        <p class="projects-help">Pour les dépôts rendus publics, retrouvez mes travaux sur <a href="https://github.com/fatimaadda2878" target="_blank" rel="noopener noreferrer">GitHub ↗</a>. Le projet phare dispose d'un <a href="https://github.com/fatimaadda2878/protein-solubility-api" target="_blank" rel="noopener noreferrer">dépôt dédié ↗</a>.</p>
+        <div class="filterbar" role="group" aria-label="Filtrer les projets par bloc de compétences">
+          <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Tous · 12</button>
+          <button class="filter-btn" type="button" data-filter="pilotage" aria-pressed="false">Pilotage</button>
+          <button class="filter-btn" type="button" data-filter="infrastructure" aria-pressed="false">Infrastructure</button>
+          <button class="filter-btn" type="button" data-filter="creation" aria-pressed="false">Création de modèles</button>
+          <button class="filter-btn" type="button" data-filter="optimisation" aria-pressed="false">Optimisation</button>
+        </div>
+        <div class="project-status" id="projectStatus" role="status" aria-live="polite">12 projets affichés</div>
+        <div class="projects-grid" id="projectsGrid">
+          <article class="p-card" data-category="pilotage">
+            <div><div class="p-bottom"><span class="p-no">P1</span><span class="p-kind">Pilotage de projet data</span></div>
+            <h3>Démarrez votre formation</h3><p class="p-desc">Structurer le parcours : objectifs d&#x27;apprentissage, progression, livrables et préparation des soutenances.</p></div>
+            <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>Planification</span><span>Organisation</span></div><a class="project-link" href="mailto:adda.fatima@hotmail.fr?subject=Demande%20de%20livrable%20P1" aria-label="Demander le livrable du projet P1 par e-mail">Demander le livrable ↗</a></div>
+          </article>
+          <article class="p-card" data-category="pilotage">
+            <div><div class="p-bottom"><span class="p-no">P11</span><span class="p-kind">Pilotage de projet data</span></div>
+            <h3>Réalisez le cadrage d&#x27;un projet IA</h3><p class="p-desc">Traduire un besoin en périmètre de preuve de concept, critères de succès, risques et arbitrage budgétaire.</p><p class="p-proof">POC / MVP chiffré à 77,6 k€ dans l&#x27;étude de cadrage (estimation, non dépense).</p></div>
+            <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>Cadrage IA</span><span>Budget</span><span>RGPD</span></div><a class="project-link" href="mailto:adda.fatima@hotmail.fr?subject=Demande%20de%20livrable%20P11" aria-label="Demander le livrable du projet P11 par e-mail">Demander le livrable ↗</a></div>
+          </article>
+          <article class="p-card" data-category="infrastructure">
+            <div><div class="p-bottom"><span class="p-no">P5</span><span class="p-kind">Infrastructure et déploiement</span></div>
+            <h3>Déployez un modèle de Machine Learning</h3><p class="p-desc">Exposer une prédiction dans une application et organiser l&#x27;exécution, les tests et la reproductibilité du service.</p></div>
+            <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>FastAPI</span><span>Docker</span><span>CI/CD</span></div><a class="project-link" href="mailto:adda.fatima@hotmail.fr?subject=Demande%20de%20livrable%20P5" aria-label="Demander le livrable du projet P5 par e-mail">Demander le livrable ↗</a></div>
+          </article>
+          <article class="p-card" data-category="creation">
+            <div><div class="p-bottom"><span class="p-no">P2</span><span class="p-kind">Création de modèles</span></div>
+            <h3>Analysez les données de systèmes éducatifs</h3><p class="p-desc">Explorer les données disponibles, caractériser leur qualité et construire une analyse utile à la décision.</p></div>
+            <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>Exploration</span><span>Qualité des données</span></div><a class="project-link" href="mailto:adda.fatima@hotmail.fr?subject=Demande%20de%20livrable%20P2" aria-label="Demander le livrable du projet P2 par e-mail">Demander le livrable ↗</a></div>
+          </article>
+          <article class="p-card" data-category="creation">
+            <div><div class="p-bottom"><span class="p-no">P3</span><span class="p-kind">Création de modèles</span></div>
+            <h3>Anticipez les besoins en consommation de bâtiments</h3><p class="p-desc">Modéliser la consommation énergétique à partir de données de bâtiments et restituer les variables explicatives.</p><p class="p-proof">R² de 0,72 rapporté dans le CV ; protocole et périmètre à consulter dans le projet.</p></div>
+            <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>Régression</span><span>Python</span><span>SQL</span></div><a class="project-link" href="mailto:adda.fatima@hotmail.fr?subject=Demande%20de%20livrable%20P3" aria-label="Demander le livrable du projet P3 par e-mail">Demander le livrable ↗</a></div>
+          </article>
+          <article class="p-card" data-category="creation">
+            <div><div class="p-bottom"><span class="p-no">P4</span><span class="p-kind">Création de modèles</span></div>
+            <h3>Classifiez automatiquement des informations</h3><p class="p-desc">Transformer des contenus bruts en données exploitables et comparer des approches de classification.</p></div>
+            <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>Prétraitement</span><span>Classification</span></div><a class="project-link" href="mailto:adda.fatima@hotmail.fr?subject=Demande%20de%20livrable%20P4" aria-label="Demander le livrable du projet P4 par e-mail">Demander le livrable ↗</a></div>
+          </article>
+          <article class="p-card" data-category="creation">
+            <div><div class="p-bottom"><span class="p-no">P7</span><span class="p-kind">Création de modèles</span></div>
+            <h3>Labellisez et appliquez des approches semi-supervisées en traitement d’images</h3><p class="p-desc">Classer des IRM cérébrales avec peu d&#x27;étiquettes grâce au pseudo-étiquetage et au transfert d&#x27;apprentissage.</p><p class="p-proof">1 506 IRM, dont 100 annotées ; rappel de 0,87 pour la classe cancer selon le bilan du projet.</p></div>
+            <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>PyTorch</span><span>CNN</span><span>Semi-supervisé</span></div><a class="project-link" href="mailto:adda.fatima@hotmail.fr?subject=Demande%20de%20livrable%20P7" aria-label="Demander le livrable du projet P7 par e-mail">Demander le livrable ↗</a></div>
+          </article>
+          <article class="p-card" data-category="creation">
+            <div><div class="p-bottom"><span class="p-no">P9</span><span class="p-kind">Création de modèles</span></div>
+            <h3>Concevez et déployez un système RAG</h3><p class="p-desc">Interroger une base documentaire via recherche augmentée par génération et exposer le résultat dans une API.</p><p class="p-proof">9 495 événements indexés ; 15/15 tests et 10/10 questions validées lors des vérifications du projet.</p></div>
+            <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>RAG</span><span>FAISS</span><span>FastAPI</span></div><a class="project-link" href="mailto:adda.fatima@hotmail.fr?subject=Demande%20de%20livrable%20P9" aria-label="Demander le livrable du projet P9 par e-mail">Demander le livrable ↗</a></div>
+          </article>
+          <article class="p-card" data-category="optimisation">
+            <div><div class="p-bottom"><span class="p-no">P6</span><span class="p-kind">Optimisation des modèles</span></div>
+            <h3>Initiez-vous au MLOps</h3><p class="p-desc">Structurer le suivi des expérimentations, le versionnement et la comparaison reproductible des modèles.</p></div>
+            <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>MLflow</span><span>Traçabilité</span></div><a class="project-link" href="mailto:adda.fatima@hotmail.fr?subject=Demande%20de%20livrable%20P6" aria-label="Demander le livrable du projet P6 par e-mail">Demander le livrable ↗</a></div>
+          </article>
+          <article class="p-card" data-category="optimisation">
+            <div><div class="p-bottom"><span class="p-no">P8</span><span class="p-kind">Optimisation des modèles</span></div>
+            <h3>Confirmez vos compétences en MLOps</h3><p class="p-desc">Construire puis auditer une chaîne de prédiction de solubilité : contrôle des données, coûts d’erreur, automatisation et déploiement.</p><p class="p-proof">Étude complète disponible : modèle fine-tuné à ≈ 0,83 d&#x27;AUC exploratoire sur Tune, sans revendication de validation externe.</p></div>
+            <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>LightGBM</span><span>ESM-2</span><span>GitHub Actions</span></div><a class="project-link" href="https://github.com/fatimaadda2878/protein-solubility-api" target="_blank" rel="noopener noreferrer" aria-label="Voir le dépôt GitHub associé au projet P8">Code et démarche ↗</a></div>
+          </article>
+          <article class="p-card" data-category="optimisation">
+            <div><div class="p-bottom"><span class="p-no">P10</span><span class="p-kind">Optimisation des modèles</span></div>
+            <h3>Évaluez les performances d’un LLM</h3><p class="p-desc">Évaluer des réponses générées, la recherche de contexte et les erreurs de restitution pour guider les améliorations.</p><p class="p-proof">Suivi d&#x27;indicateurs de pertinence et de rappel du contexte, sans réduction à un score unique.</p></div>
+            <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>LLM</span><span>RAGAS</span><span>Évaluation</span></div><a class="project-link" href="mailto:adda.fatima@hotmail.fr?subject=Demande%20de%20livrable%20P10" aria-label="Demander le livrable du projet P10 par e-mail">Demander le livrable ↗</a></div>
+          </article>
+          <article class="p-card" data-category="optimisation">
+            <div><div class="p-bottom"><span class="p-no">P12</span><span class="p-kind">Optimisation des modèles</span></div>
+            <h3>Concevez un système de recommandation de prix multi-sources</h3><p class="p-desc">Croiser plusieurs sources de données et formaliser une logique de recommandation tenant compte des écarts et incertitudes.</p></div>
+            <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>Multi-sources</span><span>Recommandation</span></div><a class="project-link" href="mailto:adda.fatima@hotmail.fr?subject=Demande%20de%20livrable%20P12" aria-label="Demander le livrable du projet P12 par e-mail">Demander le livrable ↗</a></div>
+          </article>
+        </div>
+        <p class="footnote">Le 13e projet est ce portfolio professionnel : une synthèse de mes réalisations et de mon recul sur le métier.</p>
+      </section>
+      <section class="section" id="competences" aria-labelledby="skills-title">
+        <div class="section-top"><div><div class="eyebrow">Compétences opérationnelles</div><h2 id="skills-title">Mes outils, mes méthodes,<br>mon degré d'autonomie.</h2></div><span class="section-num">04 / 08</span></div>
+        <p class="section-intro">Évaluation personnelle sur cinq niveaux : je préfère distinguer ce que je maîtrise en autonomie de ce que je dois encore consolider.</p>
+        <div class="scale" aria-label="Légende des niveaux de compétence"><span><b>1</b> Notions</span><span><b>2</b> Pratique guidée</span><span><b>3</b> Autonome</span><span><b>4</b> Avancé</span><span><b>5</b> Expert</span></div>
+        <div class="skills-grid" id="skillsGrid" aria-label="Compétences et jauges de niveau">
+<section class="skill-panel"><h3>Programmation et données</h3><div class="skill-row"><span class="skill-title">Python</span><span class="segments" role="img" aria-label="Python : 4 sur 5 — Avancé"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">4</span></div><div class="skill-row"><span class="skill-title">pandas / NumPy</span><span class="segments" role="img" aria-label="pandas / NumPy : 4 sur 5 — Avancé"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">4</span></div><div class="skill-row"><span class="skill-title">SQL</span><span class="segments" role="img" aria-label="SQL : 3 sur 5 — Autonome"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">3</span></div><div class="skill-row"><span class="skill-title">Git / GitHub</span><span class="segments" role="img" aria-label="Git / GitHub : 4 sur 5 — Avancé"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">4</span></div><div class="skill-row"><span class="skill-title">Visualisation</span><span class="segments" role="img" aria-label="Visualisation : 4 sur 5 — Avancé"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">4</span></div></section><section class="skill-panel"><h3>Machine Learning</h3><div class="skill-row"><span class="skill-title">Supervisé · scikit-learn</span><span class="segments" role="img" aria-label="Supervisé · scikit-learn : 4 sur 5 — Avancé"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">4</span></div><div class="skill-row"><span class="skill-title">Gradient boosting</span><span class="segments" role="img" aria-label="Gradient boosting : 4 sur 5 — Avancé"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">4</span></div><div class="skill-row"><span class="skill-title">Optimisation · Optuna</span><span class="segments" role="img" aria-label="Optimisation · Optuna : 3 sur 5 — Autonome"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">3</span></div><div class="skill-row"><span class="skill-title">Métriques et seuil métier</span><span class="segments" role="img" aria-label="Métriques et seuil métier : 4 sur 5 — Avancé"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">4</span></div><div class="skill-row"><span class="skill-title">Interprétabilité</span><span class="segments" role="img" aria-label="Interprétabilité : 3 sur 5 — Autonome"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">3</span></div></section><section class="skill-panel"><h3>Deep learning &amp; IA générative</h3><div class="skill-row"><span class="skill-title">CNN et transfer learning</span><span class="segments" role="img" aria-label="CNN et transfer learning : 3 sur 5 — Autonome"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">3</span></div><div class="skill-row"><span class="skill-title">Semi-supervisé</span><span class="segments" role="img" aria-label="Semi-supervisé : 3 sur 5 — Autonome"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">3</span></div><div class="skill-row"><span class="skill-title">NLP et embeddings</span><span class="segments" role="img" aria-label="NLP et embeddings : 3 sur 5 — Autonome"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">3</span></div><div class="skill-row"><span class="skill-title">Modèles de langage protéique</span><span class="segments" role="img" aria-label="Modèles de langage protéique : 3 sur 5 — Autonome"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">3</span></div><div class="skill-row"><span class="skill-title">RAG</span><span class="segments" role="img" aria-label="RAG : 3 sur 5 — Autonome"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">3</span></div><div class="skill-row"><span class="skill-title">Évaluation de LLM</span><span class="segments" role="img" aria-label="Évaluation de LLM : 3 sur 5 — Autonome"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">3</span></div></section><section class="skill-panel"><h3>MLOps &amp; déploiement</h3><div class="skill-row"><span class="skill-title">MLflow</span><span class="segments" role="img" aria-label="MLflow : 4 sur 5 — Avancé"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">4</span></div><div class="skill-row"><span class="skill-title">FastAPI</span><span class="segments" role="img" aria-label="FastAPI : 4 sur 5 — Avancé"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">4</span></div><div class="skill-row"><span class="skill-title">Docker</span><span class="segments" role="img" aria-label="Docker : 3 sur 5 — Autonome"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">3</span></div><div class="skill-row"><span class="skill-title">CI/CD · GitHub Actions</span><span class="segments" role="img" aria-label="CI/CD · GitHub Actions : 3 sur 5 — Autonome"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">3</span></div><div class="skill-row"><span class="skill-title">Monitoring et dérive</span><span class="segments" role="img" aria-label="Monitoring et dérive : 3 sur 5 — Autonome"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">3</span></div><div class="skill-row"><span class="skill-title">Cloud</span><span class="segments" role="img" aria-label="Cloud : 2 sur 5 — Pratique guidée"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">2</span></div></section><section class="skill-panel"><h3>Pilotage de projet data</h3><div class="skill-row"><span class="skill-title">Cadrage et recueil des besoins</span><span class="segments" role="img" aria-label="Cadrage et recueil des besoins : 3 sur 5 — Autonome"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">3</span></div><div class="skill-row"><span class="skill-title">CRISP-DM et Agile</span><span class="segments" role="img" aria-label="CRISP-DM et Agile : 3 sur 5 — Autonome"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">3</span></div><div class="skill-row"><span class="skill-title">Analyse coût-bénéfice</span><span class="segments" role="img" aria-label="Analyse coût-bénéfice : 3 sur 5 — Autonome"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">3</span></div><div class="skill-row"><span class="skill-title">RGPD et AI Act</span><span class="segments" role="img" aria-label="RGPD et AI Act : 2 sur 5 — Pratique guidée"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">2</span></div></section><section class="skill-panel"><h3>Expertise métier &amp; langues</h3><div class="skill-row"><span class="skill-title">Biochimie des protéines</span><span class="segments" role="img" aria-label="Biochimie des protéines : 5 sur 5 — Expert"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span></span><span class="skill-level">5</span></div><div class="skill-row"><span class="skill-title">Expression et purification</span><span class="segments" role="img" aria-label="Expression et purification : 5 sur 5 — Expert"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span></span><span class="skill-level">5</span></div><div class="skill-row"><span class="skill-title">Qualité et traçabilité</span><span class="segments" role="img" aria-label="Qualité et traçabilité : 4 sur 5 — Avancé"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">4</span></div><div class="skill-row"><span class="skill-title">Français</span><span class="segments" role="img" aria-label="Français : 5 sur 5 — Expert"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span></span><span class="skill-level">5</span></div><div class="skill-row"><span class="skill-title">Anglais professionnel</span><span class="segments" role="img" aria-label="Anglais professionnel : 3 sur 5 — Autonome"><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment filled" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span><span class="segment" aria-hidden="true"></span></span><span class="skill-level">3</span></div></section>
+</div>
+      </section>
+      <section class="section" id="savoir-etre" aria-labelledby="soft-title">
+        <div class="section-top"><div><div class="eyebrow">Compétences transversales</div><h2 id="soft-title">Une qualité, deux terrains<br>où la mettre en œuvre.</h2></div><span class="section-num">05 / 08</span></div>
+        <p class="section-intro" style="margin-bottom:24px">Mes méthodes de travail viennent du laboratoire et se prolongent dans les projets data. Chaque exemple relie une situation scientifique à son équivalent en machine learning.</p>
+        <div class="soft-grid">
+          <article class="soft-card"><h3>Esprit d'analyse</h3><div class="soft-pair"><strong>Labo</strong><span>Diagnostiquer un protocole de purification en échec et isoler la variable en cause.</span></div><div class="soft-pair"><strong>Data</strong><span>Comprendre le plafonnement d'un modèle et relier le seuil de décision au coût métier.</span></div></article>
+          <article class="soft-card"><h3>Rigueur & qualité</h3><div class="soft-pair"><strong>Labo</strong><span>Assurer la traçabilité des essais et appliquer les procédures qualité.</span></div><div class="soft-pair"><strong>Data</strong><span>Garantir reproductibilité, tests automatisés et séparation stricte des jeux de données.</span></div></article>
+          <article class="soft-card"><h3>Curiosité</h3><div class="soft-pair"><strong>Labo</strong><span>Explorer des stratégies expérimentales alternatives lorsqu'une cible résiste.</span></div><div class="soft-pair"><strong>Data</strong><span>Mener la reconversion du ML classique aux modèles de langage ; suivre l'IA générative et sa régulation.</span></div></article>
+          <article class="soft-card"><h3>Communication & vulgarisation</h3><div class="soft-pair"><strong>Labo</strong><span>Rédiger des rapports de résultats à destination de clients non spécialistes en CRO.</span></div><div class="soft-pair"><strong>Data</strong><span>Présenter un projet en soutenance et exposer honnêtement les limites d'un modèle.</span></div></article>
+          <article class="soft-card"><h3>Collaboration transverse</h3><div class="soft-pair"><strong>Labo</strong><span>Coordonner les échanges entre biologie moléculaire, production, qualité et chefs de projet.</span></div><div class="soft-pair"><strong>Data</strong><span>Relier contraintes scientifiques, exigences métier et choix de développement.</span></div></article>
+          <article class="soft-card"><h3>Autonomie & gestion de projet</h3><div class="soft-pair"><strong>Labo</strong><span>Conduire des projets clients avec des contraintes de délais et de qualité.</span></div><div class="soft-pair"><strong>Data</strong><span>Mener seule le projet phare, du cadrage jusqu'à la mise en ligne.</span></div></article>
+        </div>
+      </section>
+      <section class="section" id="recul" aria-labelledby="reflection-title">
+        <div class="section-top"><div><div class="eyebrow">Prise de recul</div><h2 id="reflection-title">Ce que la reconversion<br>a changé dans ma pratique.</h2></div><span class="section-num">06 / 08</span></div>
+        <div class="retrospective"><div class="retro-card"><small>Ma vision avant la formation</small><p>« Le Data Scientist construit le meilleur modèle possible. »</p></div><div class="retro-card strong"><small>Ma vision aujourd'hui</small><p>« Il résout un problème métier de bout en bout. Le modèle n'est qu'une étape. »</p></div></div>
+        <div class="reflection">
+          <div><h3>Ce que je referais autrement</h3><p>Fixer le critère de succès métier et le coût des erreurs dès le cadrage ; tester la représentativité des données plus tôt ; confronter le besoin à de vrais utilisateurs avant de développer.</p></div>
+          <div><h3>Mes progrès les plus structurants</h3><p>Livrer une chaîne complète et traçable ; lire les métriques avec un œil critique ; argumenter une décision de ne pas déployer malgré un bon score exploratoire.</p></div>
+          <div><h3>Mes prochains axes de travail</h3><p>Cloud et orchestration, deep learning sur données scientifiques, data engineering et statistiques adaptées à la validation terrain.</p></div>
+        </div>
+      </section>
+      <section class="section" id="marche" aria-labelledby="market-title">
+        <div class="section-top"><div><div class="eyebrow">Veille emploi et compétences</div><h2 id="market-title">Me situer face<br>aux attentes du marché.</h2></div><span class="section-num">07 / 08</span></div>
+        <div class="market-layout">
+          <div>
+            <p class="mini-label">Compétences mentionnées dans les offres de Machine Learning Engineer</p>
+            <div class="market-bar" role="img" aria-label="Python mentionné dans 79 pour cent des offres"><span class="market-bar-name">Python</span><span class="market-bar-track"><span class="market-bar-value" style="display:block;width:79%"></span></span><span class="market-bar-pct">79 %</span></div>
+            <div class="market-bar" role="img" aria-label="Deep learning mentionné dans 56 pour cent des offres"><span class="market-bar-name">Deep learning</span><span class="market-bar-track"><span class="market-bar-value" style="display:block;width:56%"></span></span><span class="market-bar-pct">56 %</span></div>
+            <div class="market-bar" role="img" aria-label="Cloud mentionné dans 42 pour cent des offres"><span class="market-bar-name">Cloud</span><span class="market-bar-track"><span class="market-bar-value" style="display:block;width:42%"></span></span><span class="market-bar-pct">42 %</span></div>
+            <div class="market-bar" role="img" aria-label="MLOps mentionné dans 29 pour cent des offres"><span class="market-bar-name">MLOps</span><span class="market-bar-track"><span class="market-bar-value" style="display:block;width:29%"></span></span><span class="market-bar-pct">29 %</span></div>
+            <p class="market-note">Source : Axial Search, analyse communiquée de 13 776 offres depuis janvier 2026. Ces pourcentages décrivent des mentions de compétences, pas des parts exclusives du marché. France Travail met également en avant Python, SQL, les bibliothèques ML, l'IA générative et MLflow pour les métiers data en France.</p>
+          </div>
+          <div class="market-copy"><h3>Ce que j'apporte dès aujourd'hui.</h3><p>Je dispose d'une pratique de <strong>Python, MLflow, Docker, CI/CD, RAG et évaluation de modèles de langage</strong>. Je peux cadrer un besoin scientifique et construire un démonstrateur exploitable.</p><p>Je veux approfondir le <strong>cloud</strong> et le <strong>deep learning</strong>, avec des problèmes concrets et un processus de validation robuste.</p><p><strong>Ma différenciation :</strong> cinq ans d'expertise en sciences du vivant et la capacité de dialoguer sans traduction entre les équipes de laboratoire et les équipes data.</p></div>
+        </div>
+      </section>
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-box"><div><div class="eyebrow">Échangeons</div><h2 id="contact-title">Une équipe R&amp;D.<br>Un besoin data.<br>Une double expertise.</h2>
+          <p>Je recherche des opportunités en Data Science / Machine Learning, notamment en <strong>biotech, pharma, CRO, medtech et recherche</strong>. Basée dans les Yvelines, je suis disponible immédiatement pour un poste en Île-de-France, avec télétravail accepté.</p>
+          <div class="contact-details"><a href="mailto:adda.fatima@hotmail.fr" aria-label="Envoyer un e-mail à adda.fatima@hotmail.fr">adda.fatima@hotmail.fr</a><a href="tel:+33659162481" aria-label="Appeler le 06 59 16 24 81">06 59 16 24 81</a></div>
+          <p class="contact-meta">Yvelines (78) · Disponible immédiatement · Télétravail accepté</p></div>
+          <div class="contact-actions"><a class="btn" href="CV.pdf" download="CV_Fatima_ADDA-REZIG.pdf" type="application/pdf">Télécharger mon CV (PDF) ↓</a><a class="btn secondary-contact" href="mailto:adda.fatima@hotmail.fr">M'envoyer un e-mail ↗</a><a class="btn secondary-contact" href="https://www.linkedin.com/in/fatima-adda-rezig-72b60b164/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div>
+      </section>
+      <footer class="footer"><span>© <span id="year">2026</span> Fatima ADDA-REZIG · Data Scientist Machine Learning</span><span>Portfolio professionnel — CSS et JavaScript intégrés · <a href="#accueil">Retour en haut ↑</a></span></footer>
+    </div>
+  </main>
+  <script>
+    'use strict';
+    // Contenu local : aucune requête réseau, aucun cookie et aucune bibliothèque JS.
+    const filters = Array.from(document.querySelectorAll('[data-filter]'));
+    const cards = Array.from(document.querySelectorAll('.p-card'));
+    const projectStatus = document.getElementById('projectStatus');
+    filters.forEach(btn=>btn.addEventListener('click',()=>{
+      const target=btn.dataset.filter;
+      filters.forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));
+      let shown=0;
+      cards.forEach(card=>{
+        const match=target==='all'||card.dataset.category===target;
+        card.hidden=!match;
+        if(match)shown++;
+      });
+      projectStatus.textContent=shown+' projet'+(shown===1?'':'s')+' affiché'+(shown===1?'':'s');
+    }));
+    const themeBtn = document.getElementById('themeToggle');
+    const themeLabel = document.getElementById('themeLabel');
+    const root = document.documentElement;
+    function systemDark() {return window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;}
+    function updateThemeLabel(){
+      const dark=root.getAttribute('data-theme')==='dark'||(!root.hasAttribute('data-theme')&&systemDark());
+      themeLabel.textContent=dark?'Mode sombre':'Mode clair';
+      themeBtn.setAttribute('aria-label',dark?'Activer le thème clair':'Activer le thème sombre');
+    }
+    themeBtn.addEventListener('click',()=>{
+      const dark=root.getAttribute('data-theme')==='dark'||(!root.hasAttribute('data-theme')&&systemDark());
+      const selected=dark?'light':'dark';
+      root.setAttribute('data-theme',selected);
+      try { window.localStorage.setItem('portfolio-theme-fatima',selected); } catch (_) {}
+      updateThemeLabel();
+    });
+    if(window.matchMedia){
+      const m=window.matchMedia('(prefers-color-scheme: dark)');
+      if(typeof m.addEventListener==='function')m.addEventListener('change',updateThemeLabel);
+    }
+    updateThemeLabel();
+    const navLinks=Array.from(document.querySelectorAll('.navinner a[href^="#"]'));
+    if('IntersectionObserver' in window){
+      const entriesMap=new Map();
+      const observer=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>entriesMap.set(entry.target.id,entry));
+        const visible=[...entriesMap.values()].filter(e=>e.isIntersecting);
+        if(visible.length){
+          visible.sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top);
+          const current='#'+visible[0].target.id;
+          navLinks.forEach(link=>{
+            if(link.getAttribute('href')===current)link.setAttribute('aria-current','location');
+            else link.removeAttribute('aria-current');
+          });
+        }
+      },{rootMargin:'-130px 0px -65% 0px',threshold:0});
+      document.querySelectorAll('section.section[id]').forEach(section=>observer.observe(section));
+    }
+    document.getElementById('year').textContent=String(new Date().getFullYear());
+  </script>
+</body>
+</html>
