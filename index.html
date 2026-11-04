@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#f6f5f0">
+  <link rel="alternate" hreflang="fr" href="https://fatimaadda2878.github.io/">
+  <link rel="alternate" hreflang="en" href="https://fatimaadda2878.github.io/en/">
+  <link rel="alternate" hreflang="x-default" href="https://fatimaadda2878.github.io/">
+  <meta property="og:locale" content="fr_FR">
   <meta name="description" content="Fatima ADDA-REZIG, Data Scientist en Île-de-France. 5 ans de R&amp;D en biochimie des protéines, projets de machine learning, IA générative et MLOps déployés, dont un modèle ESM-2 de prédiction de solubilité en ligne.">
   <meta property="og:title" content="Fatima ADDA-REZIG — Data Scientist Machine Learning">
   <meta property="og:description" content="Du laboratoire à la mise en production de modèles. Découvrez un projet complet de prédiction de solubilité protéique et mon parcours en data science.">
@@ -475,6 +479,14 @@
     .lvl-items {display:flex;flex-wrap:wrap;gap:6px}
     .lvl-items .chip {color:var(--ink)}
     @media(max-width:520px){.lvl-row{grid-template-columns:1fr;gap:6px}}
+  
+    /* Bilingual navigation. Keeps the existing visual language. */
+    .lang-switch {display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--line);border-radius:999px;flex:none}
+    .lang-switch a {padding:5px 8px;border-radius:999px;color:var(--muted);font-size:11px;font-weight:800;text-decoration:none;line-height:1.4}
+    .lang-switch a[aria-current="page"] {background:var(--teal);color:var(--bg)}
+    .lang-switch a:hover:not([aria-current="page"]) {background:var(--panel);color:var(--ink)}
+    @media(max-width:520px) { .header-cv {display:none} .lang-switch a {padding:5px 7px} }
+    @media(max-width:380px) { .brand span:last-child {display:none} }
   </style>
 </head>
 <body>
@@ -483,6 +495,7 @@
     <div class="wrap top-inner">
       <a class="brand" href="#accueil" aria-label="Fatima ADDA-REZIG, retour à l'accueil"><span class="brand-mark" aria-hidden="true">FA</span><span>Fatima ADDA-REZIG</span></a>
       <div class="head-actions">
+        <nav class="lang-switch" aria-label="Langue du site"><a href="./" lang="fr" hreflang="fr" aria-current="page">FR</a><a href="en/" lang="en" hreflang="en">EN</a></nav>
 <a class="header-cv" href="CV_Fatima_ADDA-REZIG.pdf" download="CV_Fatima_ADDA-REZIG.pdf" type="application/pdf" aria-label="Télécharger mon CV PDF">CV PDF ↓</a>
         <a class="header-link" href="https://github.com/fatimaadda2878" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         <a class="header-link" href="https://www.linkedin.com/in/fatima-adda-rezig-72b60b164/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
