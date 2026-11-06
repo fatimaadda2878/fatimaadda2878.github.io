@@ -487,6 +487,25 @@
     .lang-switch a:hover:not([aria-current="page"]) {background:var(--panel);color:var(--ink)}
     @media(max-width:520px) { .header-cv {display:none} .lang-switch a {padding:5px 7px} }
     @media(max-width:380px) { .brand span:last-child {display:none} }
+    /* Deux études de cas complémentaires — styles isolés pour préserver le design existant. */
+    .case-studies {margin:31px 0 37px}
+    .case-studies-heading {display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:18px}
+    .case-studies-heading h3 {font:500 clamp(26px,3vw,37px)/1.12 var(--serif);letter-spacing:-.03em;color:var(--ink);margin:11px 0 0;max-width:590px}
+    .case-studies-heading > p {max-width:365px;color:var(--muted);font-size:12.5px;line-height:1.65;margin:0}
+    .case-studies-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+    .case-study-card {background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:clamp(20px,2.7vw,31px);display:flex;flex-direction:column;gap:0;min-width:0}
+    .case-study-top {display:flex;justify-content:space-between;align-items:center;gap:14px;color:var(--teal);font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:800}
+    .case-study-index {color:var(--muted);white-space:nowrap}
+    .case-study-card h4 {font:500 clamp(25px,2.6vw,32px)/1.12 var(--serif);letter-spacing:-.025em;color:var(--ink);margin:19px 0 18px}
+    .case-study-facts {margin:0}
+    .case-study-facts > div {border-top:1px solid var(--line);padding:13px 0 14px}
+    .case-study-facts dt {font-size:10px;letter-spacing:.075em;text-transform:uppercase;font-weight:800;color:var(--teal);margin:0 0 5px}
+    .case-study-facts dd {margin:0;font-size:12.5px;line-height:1.67;color:var(--body)}
+    .case-study-facts dd strong {color:var(--ink)}
+    .case-study-links {display:flex;flex-wrap:wrap;gap:9px 17px;padding-top:15px;margin-top:auto;border-top:1px solid var(--line)}
+    .case-study-links a {font-size:12px;font-weight:750;color:var(--teal)}
+    @media(max-width:780px){.case-studies-heading{display:block}.case-studies-heading>p{margin-top:12px;max-width:630px}.case-studies-grid{grid-template-columns:1fr}}
+    @media print {.case-study-card{break-inside:avoid}}
   </style>
 </head>
 <body>
@@ -547,7 +566,7 @@
       </section>
       <div class="stats" aria-label="Repères de parcours">
         <div class="stat"><span class="stat-value">5 ans</span><div class="stat-label">en R&amp;D protéines, recherche académique et CRO</div></div>
-        <div class="stat"><span class="stat-value">0,83</span><div class="stat-label">d'AUC sur la prédiction de solubilité (ESM-2 fine-tuné)</div></div>
+        <div class="stat"><span class="stat-value">0,83</span><div class="stat-label">d'AUC ROC sur Tune (jeu de développement), ESM-2 fine-tuné</div></div>
         <div class="stat"><span class="stat-value">9</span><div class="stat-label">projets data publiés sur GitHub, avec code et résultats</div></div>
         <div class="stat"><span class="stat-value">1</span><div class="stat-label">démonstrateur en ligne, de la séquence à la recommandation</div></div>
       </div>
@@ -582,7 +601,7 @@
             <p class="block-label">Ce que j'ai fait, de bout en bout</p>
             <div class="steps">
               <div class="step"><div class="step-no">01</div><h4>Cadrage</h4><p>Besoins des utilisateurs, critères de succès, coût d'une erreur.</p></div>
-              <div class="step"><div class="step-no">02</div><h4>Données</h4><p>62 478 séquences DeepSol ; séquences apparentées séparées entre les jeux avec MMseqs2 pour éviter les fuites.</p></div>
+              <div class="step"><div class="step-no">02</div><h4>Données</h4><p>62 478 séquences DeepSol ; séquences apparentées séparées entre les jeux avec MMseqs2 pour réduire le risque de fuite de données entre les jeux.</p></div>
               <div class="step"><div class="step-no">03</div><h4>Modélisation</h4><p>LightGBM et ESM-2 (35M, 150M, 650M) comparés, puis fine-tuning partiel d'ESM-2 150M combiné à 13 descripteurs biochimiques.</p></div>
               <div class="step"><div class="step-no">04</div><h4>Mise en production</h4><p>Application Gradio sur Hugging Face Spaces, tests automatisés avec GitHub Actions, poids du modèle sécurisés.</p></div>
               <div class="step"><div class="step-no">05</div><h4>Décision</h4><p>Seuil choisi selon le coût métier : écarter une bonne protéine coûte deux fois plus cher qu'un essai inutile.</p></div>
@@ -610,6 +629,39 @@
       <section class="section" id="projets" aria-labelledby="projects-title">
         <div class="section-top"><div><div class="eyebrow">Projets</div><h2 id="projects-title">Du besoin métier<br>au modèle en production.</h2></div><span class="section-num">03 / 07</span></div>
         <p class="section-intro">Neuf projets réalisés pendant ma formation, chacun avec son code public, ses résultats et ses limites.</p>
+        <!-- Deux études de cas complémentaires : projets documentés, pas de nouvelle métrique inventée. -->
+        <div class="case-studies" id="etudes-de-cas" aria-labelledby="cases-title">
+          <div class="case-studies-heading">
+            <div><div class="eyebrow">Deux projets approfondis</div><h3 id="cases-title">Deux autres problèmes, deux démarches complémentaires.</h3></div>
+            <p>Au-delà du modèle de solubilité : la gestion d'étiquettes rares en imagerie médicale et la fiabilité d'un assistant en IA générative.</p>
+          </div>
+          <div class="case-studies-grid">
+            <article class="case-study-card" aria-labelledby="case-brain-title">
+              <div class="case-study-top"><span class="case-study-topic">Deep learning · Imagerie médicale</span><span class="case-study-index">01 / 02</span></div>
+              <h4 id="case-brain-title">BrainScanAI — IRM cérébrales</h4>
+              <dl class="case-study-facts">
+                <div><dt>Problème</dt><dd>Classifier des IRM avec seulement <strong>100 images annotées sur 1 506</strong>, sans laisser des images dupliquées fausser l'apprentissage.</dd></div>
+                <div><dt>Ma contribution</dt><dd>Audit des données, identification et traitement de <strong>32 doublons potentiellement sources de fuite</strong>, construction et comparaison de trois stratégies d'apprentissage.</dd></div>
+                <div><dt>Choix technique</dt><dd>Comparaison de descripteurs HOG et RadImageNet, pseudo-étiquettes filtrées, puis modèles CNN supervisés et semi-supervisés.</dd></div>
+                <div><dt>Résultat</dt><dd>Rappel de la classe « cancer » : <strong>0,867</strong> en semi-supervisé contre <strong>0,933</strong> en supervisé sur le test de 30 images.</dd></div>
+                <div><dt>Limite et décision</dt><dd>Le semi-supervisé n'apporte pas de gain démontré ici. L'échantillon test est trop réduit pour une conclusion clinique ; une évaluation externe serait indispensable.</dd></div>
+              </dl>
+              <div class="case-study-links"><a href="https://github.com/fatimaadda2878/BrainScanAI" target="_blank" rel="noopener noreferrer">Consulter le code et les résultats ↗</a></div>
+            </article>
+            <article class="case-study-card" aria-labelledby="case-rag-title">
+              <div class="case-study-top"><span class="case-study-topic">IA générative · RAG · API</span><span class="case-study-index">02 / 02</span></div>
+              <h4 id="case-rag-title">Puls-Events — Recherche d'événements</h4>
+              <dl class="case-study-facts">
+                <div><dt>Problème</dt><dd>Répondre à des demandes en langage naturel sur des événements culturels, avec des résultats pertinents, datés et traçables.</dd></div>
+                <div><dt>Ma contribution</dt><dd>Construction du pipeline OpenAgenda, traitement des données, index vectoriel, filtres de dates et de catégories, garde-fous de pertinence et API documentée.</dd></div>
+                <div><dt>Choix technique</dt><dd>Embeddings Mistral, <strong>FAISS</strong>, LangChain, génération Mistral et <strong>FastAPI</strong> déployée sur Render.</dd></div>
+                <div><dt>Résultat</dt><dd><strong>10/10 scénarios</strong> réussis lors de l'évaluation fonctionnelle documentée sur l'API déployée ; génération accompagnée de sources.</dd></div>
+                <div><dt>Limite et décision</dt><dd>Ce petit jeu de scénarios ne prouve pas la fiabilité générale du RAG. L'index reste à pérenniser sur une infrastructure persistante et les tests à élargir.</dd></div>
+              </dl>
+              <div class="case-study-links"><a href="https://github.com/fatimaadda2878/puls-events-rag" target="_blank" rel="noopener noreferrer">Consulter le code ↗</a><a href="https://puls-events-rag.onrender.com/docs" target="_blank" rel="noopener noreferrer">Documentation API ↗</a></div>
+            </article>
+          </div>
+        </div>
         <div class="filterbar" role="group" aria-label="Filtrer les projets par bloc de compétences">
           <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Tous · 9</button>
           <button class="filter-btn" type="button" data-filter="pilotage" aria-pressed="false">Pilotage</button>
@@ -647,7 +699,7 @@
           <article class="p-card" data-category="creation">
             <div><div class="p-bottom"><span class="p-kind">Création de modèles</span></div>
             <h3>Assistant culturel par IA générative (RAG)</h3><p class="p-official">Concevez et déployez un système RAG</p><p class="p-desc">Interroger en langage naturel les événements culturels parisiens.</p><p class="p-proof">9 495 événements indexés, API déployée sur Render, 15/15 tests</p></div>
-            <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>RAG</span><span>FAISS</span><span>Mistral</span><span>FastAPI</span></div><div class="p-links"><a class="project-link" href="https://github.com/fatimaadda2878/puls-events-rag" target="_blank" rel="noopener noreferrer" aria-label="Voir le code sur GitHub">Voir le code ↗</a><a class="project-link" href="https://puls-events-rag.onrender.com/doc" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir la démo">Démo ↗</a></div></div>
+            <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>RAG</span><span>FAISS</span><span>Mistral</span><span>FastAPI</span></div><div class="p-links"><a class="project-link" href="https://github.com/fatimaadda2878/puls-events-rag" target="_blank" rel="noopener noreferrer" aria-label="Voir le code sur GitHub">Voir le code ↗</a><a class="project-link" href="https://puls-events-rag.onrender.com/docs" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir la démo">Démo ↗</a></div></div>
           </article>
           <article class="p-card" data-category="optimisation">
             <div><div class="p-bottom"><span class="p-kind">Optimisation des modèles</span></div>

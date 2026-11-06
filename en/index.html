@@ -487,6 +487,25 @@
     .lang-switch a:hover:not([aria-current="page"]) {background:var(--panel);color:var(--ink)}
     @media(max-width:520px) { .header-cv {display:none} .lang-switch a {padding:5px 7px} }
     @media(max-width:380px) { .brand span:last-child {display:none} }
+    /* Deux études de cas complémentaires — styles isolés pour préserver le design existant. */
+    .case-studies {margin:31px 0 37px}
+    .case-studies-heading {display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:18px}
+    .case-studies-heading h3 {font:500 clamp(26px,3vw,37px)/1.12 var(--serif);letter-spacing:-.03em;color:var(--ink);margin:11px 0 0;max-width:590px}
+    .case-studies-heading > p {max-width:365px;color:var(--muted);font-size:12.5px;line-height:1.65;margin:0}
+    .case-studies-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+    .case-study-card {background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:clamp(20px,2.7vw,31px);display:flex;flex-direction:column;gap:0;min-width:0}
+    .case-study-top {display:flex;justify-content:space-between;align-items:center;gap:14px;color:var(--teal);font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:800}
+    .case-study-index {color:var(--muted);white-space:nowrap}
+    .case-study-card h4 {font:500 clamp(25px,2.6vw,32px)/1.12 var(--serif);letter-spacing:-.025em;color:var(--ink);margin:19px 0 18px}
+    .case-study-facts {margin:0}
+    .case-study-facts > div {border-top:1px solid var(--line);padding:13px 0 14px}
+    .case-study-facts dt {font-size:10px;letter-spacing:.075em;text-transform:uppercase;font-weight:800;color:var(--teal);margin:0 0 5px}
+    .case-study-facts dd {margin:0;font-size:12.5px;line-height:1.67;color:var(--body)}
+    .case-study-facts dd strong {color:var(--ink)}
+    .case-study-links {display:flex;flex-wrap:wrap;gap:9px 17px;padding-top:15px;margin-top:auto;border-top:1px solid var(--line)}
+    .case-study-links a {font-size:12px;font-weight:750;color:var(--teal)}
+    @media(max-width:780px){.case-studies-heading{display:block}.case-studies-heading>p{margin-top:12px;max-width:630px}.case-studies-grid{grid-template-columns:1fr}}
+    @media print {.case-study-card{break-inside:avoid}}
   </style>
 </head>
 <body>
@@ -547,7 +566,7 @@
       </section>
       <div class="stats" aria-label="Career highlights">
         <div class="stat"><span class="stat-value">5 years</span><div class="stat-label">in protein R&amp;D, academic research and CROs</div></div>
-        <div class="stat"><span class="stat-value">0.83</span><div class="stat-label">ROC AUC for solubility prediction (fine-tuned ESM-2)</div></div>
+        <div class="stat"><span class="stat-value">0.83</span><div class="stat-label">ROC AUC on Tune (development set), fine-tuned ESM-2</div></div>
         <div class="stat"><span class="stat-value">9</span><div class="stat-label">public data science projects on GitHub, with code and results</div></div>
         <div class="stat"><span class="stat-value">1</span><div class="stat-label">live demo, from protein sequence to experimental recommendations</div></div>
       </div>
@@ -610,6 +629,39 @@
       <section class="section" id="projets" aria-labelledby="projects-title">
         <div class="section-top"><div><div class="eyebrow">Projects</div><h2 id="projects-title">From scientific needs<br>to deployed models.</h2></div><span class="section-num">03 / 07</span></div>
         <p class="section-intro">Nine projects completed during my training, each with public code, results and documented limitations.</p>
+        <!-- Two complementary case studies: sourced project results, no newly claimed performance. -->
+        <div class="case-studies" id="etudes-de-cas" aria-labelledby="cases-title">
+          <div class="case-studies-heading">
+            <div><div class="eyebrow">Two in-depth projects</div><h3 id="cases-title">Two more challenges, two different approaches.</h3></div>
+            <p>Beyond protein solubility: learning from scarce medical labels and improving the reliability of a generative AI assistant.</p>
+          </div>
+          <div class="case-studies-grid">
+            <article class="case-study-card" aria-labelledby="case-brain-title">
+              <div class="case-study-top"><span class="case-study-topic">Deep learning · Medical imaging</span><span class="case-study-index">01 / 02</span></div>
+              <h4 id="case-brain-title">BrainScanAI — Brain MRI classification</h4>
+              <dl class="case-study-facts">
+                <div><dt>Challenge</dt><dd>Classify brain MRI scans with only <strong>100 labeled images out of 1,506</strong>, while preventing duplicate images from biasing the training process.</dd></div>
+                <div><dt>My contribution</dt><dd>Dataset audit, identification and handling of <strong>32 potentially leaking duplicates</strong>, and implementation and comparison of three learning strategies.</dd></div>
+                <div><dt>Technical choice</dt><dd>Comparison of HOG and RadImageNet features, filtered pseudo-labels, and supervised versus semi-supervised CNN models.</dd></div>
+                <div><dt>Outcome</dt><dd>Recall for the cancer class: <strong>0.867</strong> with semi-supervised learning versus <strong>0.933</strong> with supervised learning on a 30-image test set.</dd></div>
+                <div><dt>Limitation and takeaway</dt><dd>Semi-supervised learning did not show a clear gain here. The test set is too small for clinical conclusions; external evaluation would be essential.</dd></div>
+              </dl>
+              <div class="case-study-links"><a href="https://github.com/fatimaadda2878/BrainScanAI" target="_blank" rel="noopener noreferrer">View code and results ↗</a></div>
+            </article>
+            <article class="case-study-card" aria-labelledby="case-rag-title">
+              <div class="case-study-top"><span class="case-study-topic">Generative AI · RAG · API</span><span class="case-study-index">02 / 02</span></div>
+              <h4 id="case-rag-title">Puls-Events — Cultural event discovery</h4>
+              <dl class="case-study-facts">
+                <div><dt>Challenge</dt><dd>Answer natural-language questions about cultural events with relevant, timely and traceable recommendations.</dd></div>
+                <div><dt>My contribution</dt><dd>Built the OpenAgenda data pipeline, vector index, date and category filters, relevance safeguards and documented API.</dd></div>
+                <div><dt>Technical choice</dt><dd>Mistral embeddings, <strong>FAISS</strong>, LangChain, Mistral generation and <strong>FastAPI</strong> deployed on Render.</dd></div>
+                <div><dt>Outcome</dt><dd><strong>10/10 scenarios passed</strong> in the documented functional evaluation of the deployed API, with source-backed responses.</dd></div>
+                <div><dt>Limitation and takeaway</dt><dd>Ten scenarios do not establish general RAG reliability. Broader evaluation and persistent vector-index storage remain priorities.</dd></div>
+              </dl>
+              <div class="case-study-links"><a href="https://github.com/fatimaadda2878/puls-events-rag" target="_blank" rel="noopener noreferrer">View source code ↗</a><a href="https://puls-events-rag.onrender.com/docs" target="_blank" rel="noopener noreferrer">API documentation ↗</a></div>
+            </article>
+          </div>
+        </div>
         <div class="filterbar" role="group" aria-label="Filter projects by skill area">
           <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All · 9</button>
           <button class="filter-btn" type="button" data-filter="pilotage" aria-pressed="false">Project management</button>
@@ -647,7 +699,7 @@
           <article class="p-card" data-category="creation">
             <div><div class="p-bottom"><span class="p-kind">Model development</span></div>
             <h3>Generative AI cultural events assistant (RAG)</h3><p class="p-official">Design and deploy a RAG system</p><p class="p-desc">Find Paris cultural events through natural-language queries.</p><p class="p-proof">9,495 events indexed; API deployed on Render; 15/15 tests passed.</p></div>
-            <div class="p-bottom"><div class="p-tags" aria-label="Topics covered"><span>RAG</span><span>FAISS</span><span>Mistral</span><span>FastAPI</span></div><div class="p-links"><a class="project-link" href="https://github.com/fatimaadda2878/puls-events-rag" target="_blank" rel="noopener noreferrer" aria-label="View source code on GitHub">View code ↗</a><a class="project-link" href="https://puls-events-rag.onrender.com/doc" target="_blank" rel="noopener noreferrer" aria-label="Open live demo">Live demo ↗</a></div></div>
+            <div class="p-bottom"><div class="p-tags" aria-label="Topics covered"><span>RAG</span><span>FAISS</span><span>Mistral</span><span>FastAPI</span></div><div class="p-links"><a class="project-link" href="https://github.com/fatimaadda2878/puls-events-rag" target="_blank" rel="noopener noreferrer" aria-label="View source code on GitHub">View code ↗</a><a class="project-link" href="https://puls-events-rag.onrender.com/docs" target="_blank" rel="noopener noreferrer" aria-label="Open live demo">Live demo ↗</a></div></div>
           </article>
           <article class="p-card" data-category="optimisation">
             <div><div class="p-bottom"><span class="p-kind">Model optimization</span></div>
