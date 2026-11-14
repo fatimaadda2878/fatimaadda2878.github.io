@@ -506,7 +506,130 @@
     .case-study-links a {font-size:12px;font-weight:750;color:var(--teal)}
     @media(max-width:780px){.case-studies-heading{display:block}.case-studies-heading>p{margin-top:12px;max-width:630px}.case-studies-grid{grid-template-columns:1fr}}
     @media print {.case-study-card{break-inside:avoid}}
-  </style>
+  
+.project-previews{margin:26px 0 40px}
+.project-previews h3{font:500 clamp(24px,3vw,34px)/1.15 var(--serif);color:var(--ink);margin:0 0 14px}
+.preview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.preview-link{display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);color:var(--ink);text-decoration:none}
+.preview-link:hover,.preview-link:focus-visible{border-color:var(--teal)}
+.preview-link svg{display:block;width:100%;height:auto;background:#15433f}
+.preview-copy{display:flex;flex-direction:column;gap:5px;flex:1;padding:14px 16px 16px}
+.preview-copy strong{font-size:16px}
+.preview-copy span{font-size:13px;color:var(--body)}
+.preview-copy .preview-cta{font-weight:750;color:var(--teal);padding-top:6px;margin-top:auto}
+.preview-link:hover .preview-cta{text-decoration:underline}
+#case-brain-title,#case-rag-title{scroll-margin-top:20px}
+@media(max-width:680px){.preview-grid{grid-template-columns:1fr}.preview-link svg{max-height:155px}}
+
+  
+.about-project{display:grid;grid-template-columns:minmax(120px,28%) 1fr;align-items:center;margin-top:22px}
+.about-project svg{height:100%;object-fit:cover}
+.case-illustration svg{display:block;width:100%;height:clamp(100px,13vw,150px);background:#15433f;border-radius:10px}
+.arch{margin:15px 0 20px;padding:14px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--ink)}
+.arch figcaption{font-size:12px;font-weight:800;margin-bottom:10px}
+.arch ol{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;padding:0;margin:0}
+.arch li{padding:8px 6px;border-radius:7px;background:var(--paper);font-size:12px;line-height:1.35;overflow-wrap:anywhere}
+.arch li b{display:block;color:var(--teal);font-size:10px;margin-bottom:3px}
+.proof-nav{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0 20px}
+.proof-nav a{border:1px solid var(--line);background:var(--panel);color:var(--teal);padding:7px 12px;border-radius:999px;font-size:13px;font-weight:700}
+@media(max-width:960px){.arch ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.about-project{grid-template-columns:1fr}.about-project svg{max-height:112px}}
+
+
+.hero.science-hero{position:relative;isolation:isolate;overflow:hidden;display:block;background:#042933;border-radius:18px;padding:clamp(20px,4vw,52px);margin-top:26px;color:#e6f5f1}
+.science-hero .hero-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right;z-index:-2}
+.science-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#042933 15%,rgba(4,41,51,.96) 43%,transparent 82%)}
+.science-hero>div{max-width:55%}
+.science-hero h1{font-size:clamp(38px,5.3vw,73px);color:#fff}
+.science-hero h1 em,.science-hero .eyebrow,.science-hero .hero-availability,.science-hero .hero-mail{color:#9cebd6}
+.science-hero .hero-desc,.science-hero .hero-desc strong,.science-hero .hero-name,.science-hero .btn-line{color:#edf9f5}
+.science-figure{margin:20px 0;color:var(--body)}
+.science-figure img,.science-figure svg{display:block;width:100%;height:auto;border-radius:12px}
+.science-figure figcaption{font-size:13px;margin-top:8px}
+.science-labels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:8px 0;font-size:12px;font-weight:750}
+.science-labels span{background:var(--panel);padding:7px;border-radius:6px}
+@media(max-width:750px){.science-hero>div{max-width:none}.science-hero .hero-art{position:static;height:auto;margin-bottom:10px;border-radius:10px}.science-hero::before{display:none}.science-labels{grid-template-columns:repeat(2,1fr)}}
+
+/* Captions stay within the visual; pipeline labels follow the image coordinates. */
+.science-overlay{position:relative;overflow:hidden;border-radius:12px;background:#05232e}
+.science-overlay figcaption{position:absolute;inset:auto 0 0;margin:0;padding:14px 18px;color:#fff;background:rgba(3,27,37,.94);font-size:14px;line-height:1.5}
+.science-pipeline{overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#faf7f0}
+.science-pipeline>figcaption{margin:0;padding:14px 18px;color:#24413e;font-size:13px;line-height:1.5}
+.pipeline-scroll{overflow-x:auto}
+.pipeline-stage{position:relative;container-type:inline-size;min-width:620px}
+.pipeline-stage img{border-radius:0}
+.pipeline-stage .science-labels{position:absolute;left:1.5%;right:1.6%;top:79.9%;height:10.8%;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2.15%;font-size:clamp(11px,1.65cqw,19px);line-height:1.15;color:#104d48}
+.pipeline-stage .science-labels span{display:flex;align-items:center;justify-content:center;text-align:center;padding:0 5%;background:none;border-radius:0;overflow-wrap:normal}
+@media(max-width:500px){.science-overlay figcaption{font-size:12px;padding:8px 10px}.science-overlay img{padding-bottom:60px}.science-pipeline>figcaption{padding:12px}}
+
+/* Compact illustrations alongside their explanation, never full-width posters. */
+.science-inline{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;align-items:center;padding:16px;margin:0 0 16px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+.science-inline img{display:block;width:220px;height:150px;object-fit:contain;background:#06202d;border-radius:9px;padding:0}
+.science-inline figcaption{position:static;margin:0;padding:0;background:none;color:inherit;font-size:14px;line-height:1.55}
+.science-inline h4{margin:0 0 8px;font-size:18px;line-height:1.3}
+.science-inline p{margin:0 0 8px}
+.science-inline small{display:block;font-size:11px;line-height:1.5;opacity:.75}
+@media(max-width:650px){.science-inline{grid-template-columns:120px minmax(0,1fr);gap:14px;padding:12px}.science-inline img{width:120px;height:100px}.science-inline h4{font-size:16px}.science-inline figcaption{font-size:13px}}
+@media(max-width:380px){.science-inline{grid-template-columns:1fr}.science-inline img{width:150px;height:100px}}
+
+.about-project .solubility-thumbnail{display:block;width:100%;height:160px;object-fit:contain;background:#1b2930}
+.pipeline-stage .science-labels{display:block;inset:0;width:100%;height:100%;margin:0}
+.pipeline-stage .science-labels span{position:absolute;top:85.33%;transform:translate(-50%,-50%);width:21.5%;height:10%;padding:0 8px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.2}
+.pipeline-stage .science-labels span:nth-child(1){left:12.32%}
+.pipeline-stage .science-labels span:nth-child(2){left:36.24%}
+.pipeline-stage .science-labels span:nth-child(3){left:60.05%}
+.pipeline-stage .science-labels span:nth-child(4){left:85.89%;width:24.3%}
+@media(max-width:480px){.about-project .solubility-thumbnail{height:150px}}
+
+.project-art{height:132px;margin:-19px -19px 18px;overflow:hidden;border-radius:9px 9px 0 0;background:#163e3d}.project-art img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .2s ease}.p-card:hover .project-art img{transform:scale(1.025)}@media(prefers-reduced-motion:reduce){.project-art img{transition:none}.p-card:hover .project-art img{transform:none}}
+
+/* Editorial images retain their full landscape composition. */
+.project-art{height:auto;aspect-ratio:1672/941}.project-art img{width:100%;height:100%;object-fit:contain}.project-art:has(img[src$="tubes.png"]){background:#1b2930}
+
+.case-illustration{height:auto;max-height:none}.case-illustration img{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:contain;border-radius:12px}
+
+.flagship-photo{margin:0;align-self:center;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--bg)}.flagship-photo img{display:block;width:100%;height:auto}.flagship-photo figcaption{padding:12px 16px;font-size:11px;line-height:1.5;color:var(--muted)}.architecture-integrated{margin:22px 0;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--bg)}.architecture-integrated>figcaption{font-weight:700;color:var(--teal);margin-bottom:20px}.architecture-lane+.architecture-lane{margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}.lane-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}.architecture-lane ol{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px;padding:0;margin:12px 0}.architecture-lane li{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px 12px;min-height:76px;background:var(--paper);border:1px solid var(--line);border-radius:10px;font-size:13px;font-weight:650;line-height:1.45}.architecture-lane li+li:before{content:'→';position:absolute;left:-20px;color:var(--teal)}.architecture-integrated>p{font-size:12px;line-height:1.6;margin:18px 0 0}@media(max-width:600px){.architecture-integrated{padding:16px}.architecture-lane ol{grid-template-columns:1fr;gap:22px}.architecture-lane li+li:before{content:'↓';left:50%;top:-23px}.architecture-lane li{min-height:58px}}
+
+.flagship-actions .science-pipeline{margin:0 0 22px}.flagship-actions .feature-links{margin-top:0}.about-project .solubility-thumbnail{object-fit:cover}
+
+/* One illustrated architecture, with the biological interpretation integrated below. */
+.feature-top{grid-template-columns:minmax(0,1fr)}.feature-top>div{max-width:900px}.pipeline-title{margin:0 0 10px;font-size:22px;line-height:1.3}.pipeline-intro{max-width:850px;font-size:14px;line-height:1.65;margin:0 0 20px}.pipeline-annotations{margin:0;padding:22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;border-top:1px solid var(--line);background:var(--paper)}.pipeline-annotations dt{font-size:14px;font-weight:750;color:var(--ink);line-height:1.5}.pipeline-annotations dt span{display:block;color:var(--teal);font-size:11px;letter-spacing:.1em;margin-bottom:7px}.pipeline-annotations dd{margin:8px 0 0;font-size:12px;line-height:1.65;color:var(--body)}.science-pipeline .pipeline-context{padding:14px 22px;margin:0;line-height:1.6;font-size:12px}@media(max-width:800px){.pipeline-annotations{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:480px){.pipeline-annotations{grid-template-columns:1fr;gap:18px;padding:18px}.pipeline-title{font-size:19px}}
+
+/* Reading alignment and stronger contrast, without changing content or layout. */
+p,dd{text-align:justify;text-justify:inter-word;hyphens:auto;overflow-wrap:break-word}
+.hero .eyebrow,.hero-name,.hero-availability,.feature-note,.block-label,.p-official,.case-study-topic{text-align:start}
+.flagship-actions{background:#f0f5f1;color:#243e38}
+.flagship-actions .block-label{color:#075b4e;text-align:center}
+.flagship-actions .pipeline-title{color:#123f36;text-align:center}
+.flagship-actions .pipeline-intro{color:#29453d}
+.flagship-actions .science-pipeline{border-color:#a9bfb5;background:#faf7f0;box-shadow:0 3px 14px #143c3510}
+.flagship-actions .pipeline-context{background:#e4eee7;color:#203e34;border-top:1px solid #afc5b7}
+.flagship-actions .pipeline-context strong{color:#123f36}
+.flagship-actions .pipeline-annotations{background:#fffdf8;border-color:#afc5b7}
+.flagship-actions .pipeline-annotations dt{color:#123f36;text-align:center}
+.flagship-actions .pipeline-annotations dt span{color:#096251;text-align:center}
+.flagship-actions .pipeline-annotations dd{color:#29453d}
+.flagship-actions .science-labels span{color:#064b40;text-align:center}
+.flagship-actions .feature-links{justify-content:center}
+.flagship-actions .feature-note{text-align:center;color:#425d53}
+.flagship-actions .btn-main{background:#075b4e;color:#fff;border-color:#075b4e}
+.flagship-actions .btn-line,.flagship-actions .btn-document{background:#fffdf8;color:#124d40;border-color:#668d7d}
+.flagship-actions .btn:hover{filter:brightness(.94)}
+.arch figcaption,.arch li,.science-labels span,.metric .number,.metric .unit{text-align:center}
+
+/* Compact, consistently sized illustrations above skill headings. */
+.skill-art{width:100%;max-width:240px;aspect-ratio:3/2;margin:0 auto 18px;overflow:hidden;border-radius:9px;background:#153e3b}.skill-art img{display:block;width:100%;height:100%;object-fit:contain}.skill-panel h3{text-align:center}
+
+/* Consistent centered headings; natural spacing in narrow text columns. */
+.section-top{display:block;text-align:center}.section-top>div{width:100%}.section-top h2{margin-left:auto;margin-right:auto;text-align:center}.section-top .eyebrow{justify-content:center;text-align:center}
+.section h3,.section h4,.section .block-label{text-align:center}
+.case-studies-heading{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}.case-studies-heading>div{width:100%}.case-studies-heading .eyebrow{justify-content:center}.case-studies-heading h3{max-width:850px;margin:11px auto 0;text-align:center}.case-studies-heading>p{max-width:760px;margin:0 auto;text-align:center;text-wrap:pretty}
+.step p,.p-card p,.skill-panel p,.case-study-facts dd,.pipeline-annotations dd,.metric p,.pivot-card p,.soft-pair span,.reflection-card p{text-align:left;text-justify:auto;hyphens:none;word-spacing:normal;letter-spacing:normal;text-wrap:pretty}
+.step h4,.soft-card h3{text-align:center}.cap-more{text-align:center}.proof-nav{justify-content:center}
+@media(max-width:650px){p,dd{text-align:left;text-justify:auto;hyphens:none;word-spacing:normal}.case-studies-heading>p,.cap-more{text-align:center}}
+
+.section-top .eyebrow,.case-studies-heading .eyebrow{justify-content:flex-start;text-align:left}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
@@ -529,7 +652,7 @@
   </header>
   <main id="contenu">
     <div class="wrap">
-      <section class="hero" id="accueil" aria-labelledby="hero-heading">
+      <section class="hero science-hero" id="accueil" aria-labelledby="hero-heading"><img src="visuels/hero.png" alt="Illustration conceptuelle de protéines dispersées et agrégées" class="hero-art" fetchpriority="high">
         <div>
           <div class="eyebrow">Data Scientist · Sciences du vivant</div>
           <p class="hero-name">Fatima ADDA-REZIG · Data Scientist Machine Learning</p>
@@ -548,22 +671,7 @@
             <a class="btn btn-document" href="CV_Fatima_ADDA-REZIG.pdf" download="CV_Fatima_ADDA-REZIG.pdf" type="application/pdf">Télécharger mon CV <span aria-hidden="true">↓</span></a>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="visual-frame">
-            <svg class="hero-fold" viewBox="0 0 400 400" role="img" aria-label="Illustration scientifique abstraite d'une chaîne protéique repliée, en vert pétrole et ocre">
-              <path class="fold-back" d="M76 161 C123 94 201 68 278 114 S324 228 277 262 159 270 135 214 164 139 218 148 281 195 248 233 179 238 168 196 194 164 232 181"/>
-              <path class="fold-outer" d="M46 238 C71 204 71 156 108 122 S200 74 251 96 331 166 319 221 241 291 193 285 132 259 131 215 151 138 215 143 290 199 264 232 201 256 172 223 194 173 221 189"/>
-              <path class="fold-inner" d="M110 122 C117 155 143 160 163 150 S188 101 223 110 278 148 273 178 243 213 226 200 225 174 255 183 307 229 285 261 220 297 189 281"/>
-              <path class="fold-highlight" d="M48 237 C78 193 79 157 108 124 S200 80 249 99"/>
-              <g fill="var(--gold)"><circle cx="46" cy="238" r="8"/><circle cx="318" cy="221" r="7"/><circle cx="188" cy="281" r="7"/></g>
-              <g fill="var(--teal)"><circle cx="108" cy="122" r="6"/><circle cx="224" cy="111" r="6"/><circle cx="219" cy="188" r="5"/></g>
-              <g fill="none" stroke="var(--muted)" stroke-opacity=".45" stroke-width="1"><ellipse cx="202" cy="195" rx="164" ry="113" transform="rotate(-27 202 195)"/><ellipse cx="202" cy="195" rx="104" ry="160" transform="rotate(35 202 195)"/></g>
-              <g fill="var(--ink)"><circle cx="46" cy="104" r="2.5"/><circle cx="328" cy="105" r="3"/><circle cx="358" cy="291" r="2"/><circle cx="93" cy="310" r="2"/></g>
-            </svg>
-            <div class="visual-caption"><span>Structure • séquence • fonction</span><span>01 / 01</span></div>
-          </div>
-        </div>
-      </section>
+        </section>
       <div class="stats" aria-label="Repères de parcours">
         <div class="stat"><span class="stat-value">5 ans</span><div class="stat-label">en R&amp;D protéines, recherche académique et CRO</div></div>
         <div class="stat"><span class="stat-value">3</span><div class="stat-label">études de cas détaillées : protéines, IRM cérébrales et IA générative</div></div>
@@ -571,33 +679,32 @@
         <div class="stat"><span class="stat-value">1</span><div class="stat-label">démonstrateur en ligne, de la séquence à la recommandation</div></div>
       </div>
       <section class="section" id="a-propos" aria-labelledby="about-title">
-        <div class="section-top"><div><div class="eyebrow">Positionnement</div><h2 id="about-title">Deux métiers,<br>une même exigence de preuve.</h2></div><span class="section-num">01 / 07</span></div>
+        <div class="section-top"><div><div class="eyebrow">Positionnement</div><h2 id="about-title">Deux métiers,<br>une même exigence de preuve.</h2></div></div>
         <div class="two-col">
           <p class="about-big">« Je sais ce que coûte un résultat inexploitable. Je sais aussi qu'un bon modèle statistique n'est pas forcément une bonne décision métier. »</p>
           <div class="about-copy"><p>Pendant cinq ans, en laboratoire académique puis en CRO, j'ai <strong>exprimé et purifié des protéines recombinantes</strong> pour des clients industriels : échantillons à qualifier, résultats à reproduire, délais à tenir.</p><p>Ma formation de Data Scientist m'a donné les outils pour aller plus loin : préparer les données, modéliser, évaluer, déployer et suivre un modèle en production.</p><p><strong>Ce que j'apporte à une équipe :</strong> je comprends les données expérimentales de l'intérieur, je parle la langue des biologistes et des data scientists, et je juge un modèle à ce qu'il change dans une décision, pas seulement à son score.</p>
             <div class="mini-columns"><div class="fact"><span class="small">Avant</span><strong>Laboratoire académique & CRO</strong></div><div class="fact"><span class="small">Aujourd'hui</span><strong>Data Scientist Machine Learning</strong></div></div>
           </div>
         </div>
-      </section>
+      <a class="preview-link about-project" href="#projet-phare"><img class="solubility-thumbnail" src="visuels/protein-laboratory.png" alt="Illustration conceptuelle d’analyse protéique au laboratoire" loading="lazy" decoding="async" width="1536" height="1024"><span class="preview-copy"><strong>Solubilité des protéines</strong><span>Un score pour éclairer les premiers choix au labo.</span><span class="preview-cta">Découvrir le projet <span aria-hidden="true">→</span></span></span></a>
+</section>
       <section class="section" id="projet-phare" aria-labelledby="flagship-title">
-        <div class="section-top"><div><div class="eyebrow">Étude de cas · projet phare</div><h2 id="flagship-title">Prédire avant de produire.</h2></div><span class="section-num">02 / 07</span></div>
+        <div class="section-top"><div><div class="eyebrow">Étude de cas · projet phare</div><h2 id="flagship-title">Prédire avant de produire.</h2></div></div>
         <article class="featured" aria-label="Étude de cas complète : solubilité des protéines recombinantes">
           <div class="feature-top"><div>
             <span class="featured-label">Machine Learning · Bioinformatique · Conduite de projet</span>
             <h3>Prédire la solubilité d'une protéine avant de lancer la production.</h3>
             <p><strong>Le problème :</strong> en R&amp;D, une construction prometteuse sur le papier peut finir en corps d'inclusion. On le découvre après plusieurs jours de culture, de purification et d'analyse : du temps et des consommables perdus.</p>
             <p><strong>Ma solution :</strong> un outil en ligne. On colle une séquence, il renvoie un score de solubilité, identifie la protéine dans PDB et UniProt quand la correspondance est fiable, et propose un plan d'essais d'expression et de purification argumenté.</p>
-            <div class="feature-links">
+            
+            
+          </div>
+          </div><div class="feature-block flagship-actions"><p class="block-label">Architecture et utilisation</p><h4 class="pipeline-title">De la séquence aux essais en laboratoire</h4><p class="pipeline-intro">L’illustration présente les travaux de comparaison et de déploiement. L’application livrée utilise ESM-2 adapté et Gradio.</p><figure class="science-figure science-pipeline"><div class="pipeline-scroll"><div class="pipeline-stage"><img src="visuels/pipeline.png" alt="Schéma de principe du pipeline en quatre étapes" loading="lazy" decoding="async"><div class="science-labels"><span>Séquences annotées</span><span>Embeddings ESM-2</span><span>Comparatif LightGBM</span><span>FastAPI / Docker</span></div></div></div><figcaption class="pipeline-context"><strong>Déploiement :</strong> FastAPI / Docker pour la chaîne initiale ; Gradio sur Hugging Face Spaces pour la démo livrée.</figcaption><dl class="pipeline-annotations"><div><dt><span>01</span>Entrée</dt><dd>Séquence d’acides aminés, associée à 13 descripteurs biochimiques.</dd></div><div><dt><span>02</span>Prédiction</dt><dd>ESM-2 150M adapté produit un score de solubilité ; LightGBM sert de modèle de comparaison.</dd></div><div><dt><span>03</span>Contexte biologique</dt><dd>Identification PDB / UniProt lorsque la correspondance est fiable.</dd></div><div><dt><span>04</span>Orientation des essais</dt><dd>Essais comparatifs : tags, hôtes d’expression, conditions et contrôles.</dd></div></dl></figure><div class="feature-links">
               <a class="btn btn-main" href="https://huggingface.co/spaces/fatimaadda2878/protein-solubility-esm150-ft" target="_blank" rel="noopener noreferrer">Tester la démo <span aria-hidden="true">↗</span></a>
               <a class="btn btn-line" href="https://github.com/fatimaadda2878/protein-solubility-api" target="_blank" rel="noopener noreferrer">Voir le code <span aria-hidden="true">↗</span></a>
               <a class="btn btn-document" href="Rapport.pdf" download="Rapport_conduite_projet_Data_ML_Fatima_ADDA-REZIG.pdf" type="application/pdf">Lire le rapport (PDF) <span aria-hidden="true">↓</span></a>
-            </div>
-            <p class="feature-note">L'espace Hugging Face peut mettre quelques secondes à se réveiller.</p>
-          </div>
-          <div class="model-graphic" role="img" aria-label="Parcours d'une séquence de protéine vers un modèle de prédiction, puis un score et un plan expérimental argumenté">
-            <div><div class="caption">Du signal au choix expérimental</div><div class="sequence" aria-hidden="true">MKTAYIAKQRQISFVKSHFSRQDILDLIWYHTQGYFP...</div><div class="graphic-arrow" aria-hidden="true"></div><div class="graph-box"><strong>Modèle de solubilité</strong>ESM-2 adapté + paramètres biochimiques</div><div class="graphic-arrow" aria-hidden="true"></div><div class="graph-box"><strong>Score + contexte biologique</strong>Identification PDB / UniProt lorsque fiable</div><div class="graphic-arrow" aria-hidden="true"></div><div class="graph-box"><strong>Plan d'essais comparatifs</strong>Tags · hôtes · conditions · contrôles</div></div>
-          </div></div>
-          <div class="feature-block">
+            </div><p class="feature-note">L'espace Hugging Face peut mettre quelques secondes à se réveiller.</p></div>
+<div class="feature-block">
             <p class="block-label">Ce que j'ai fait, de bout en bout</p>
             <div class="steps">
               <div class="step"><div class="step-no">01</div><h4>Cadrage</h4><p>Besoins des utilisateurs, critères de succès, coût d'une erreur.</p></div>
@@ -627,9 +734,10 @@
         </article>
       </section>
       <section class="section" id="projets" aria-labelledby="projects-title">
-        <div class="section-top"><div><div class="eyebrow">Projets</div><h2 id="projects-title">Du besoin métier<br>au modèle en production.</h2></div><span class="section-num">03 / 07</span></div>
-        <p class="section-intro">Neuf projets réalisés pendant ma formation, chacun avec son code public, ses résultats et ses limites.</p>
+        <div class="section-top"><div><div class="eyebrow">Projets</div><h2 id="projects-title">Du besoin métier<br>au modèle en production.</h2></div></div>
+        <p class="section-intro">Après le projet phare de solubilité, découvrez deux études de cas approfondies, puis six autres projets de formation avec leur code public, leurs résultats et leurs limites.</p>
         <!-- Deux études de cas complémentaires : projets documentés, pas de nouvelle métrique inventée. -->
+        
         <div class="case-studies" id="etudes-de-cas" aria-labelledby="cases-title">
           <div class="case-studies-heading">
             <div><div class="eyebrow">Deux projets approfondis</div><h3 id="cases-title">Deux autres problèmes, deux démarches complémentaires.</h3></div>
@@ -638,7 +746,8 @@
           <div class="case-studies-grid">
             <article class="case-study-card" aria-labelledby="case-brain-title">
               <div class="case-study-top"><span class="case-study-topic">Deep learning · Imagerie médicale</span><span class="case-study-index">01 / 02</span></div>
-              <h4 id="case-brain-title">Classification d'IRM cérébrales</h4>
+              <h4 id="case-brain-title">Classification d'IRM cérébrales</h4><div class="case-illustration"><img src="visuels/project-brain.png" alt="Illustration conceptuelle de l’analyse d’IRM cérébrales" loading="lazy" decoding="async" width="1672" height="941"></div><figure class="arch"><figcaption>Architecture du projet</figcaption><ol><li><b>01</b>IRM et audit des doublons</li><li><b>02</b>Descripteurs HOG / RadImageNet</li><li><b>03</b>CNN supervisé et semi-supervisé</li><li><b>04</b>Comparaison sur le test</li></ol></figure>
+
               <dl class="case-study-facts">
                 <div><dt>Problème</dt><dd>Classifier des IRM avec seulement <strong>100 images annotées sur 1 506</strong>, sans laisser des images dupliquées fausser l'apprentissage.</dd></div>
                 <div><dt>Ma contribution</dt><dd>Audit des données, identification et traitement de <strong>32 doublons potentiellement sources de fuite</strong>, construction et comparaison de trois stratégies d'apprentissage.</dd></div>
@@ -650,7 +759,8 @@
             </article>
             <article class="case-study-card" aria-labelledby="case-rag-title">
               <div class="case-study-top"><span class="case-study-topic">IA générative · RAG · API</span><span class="case-study-index">02 / 02</span></div>
-              <h4 id="case-rag-title">Assistant IA de recherche d'événements culturels (RAG)</h4>
+              <h4 id="case-rag-title">Assistant IA de recherche d'événements culturels (RAG)</h4><div class="case-illustration"><img src="visuels/project-events.png" alt="Illustration conceptuelle d’un assistant culturel avec ses sources" loading="lazy" decoding="async" width="1672" height="941"></div><figure class="arch"><figcaption>Architecture du projet</figcaption><ol><li><b>01</b>OpenAgenda : collecte et nettoyage</li><li><b>02</b>Embeddings Mistral et index FAISS</li><li><b>03</b>Recherche filtrée et génération</li><li><b>04</b>Réponse sourcée via FastAPI</li></ol></figure>
+
               <dl class="case-study-facts">
                 <div><dt>Problème</dt><dd>Répondre à des demandes en langage naturel sur des événements culturels, avec des résultats pertinents, datés et traçables.</dd></div>
                 <div><dt>Ma contribution</dt><dd>Construction du pipeline OpenAgenda, traitement des données, index vectoriel, filtres de dates et de catégories, garde-fous de pertinence et API documentée.</dd></div>
@@ -663,76 +773,64 @@
           </div>
         </div>
         <div class="filterbar" role="group" aria-label="Filtrer les projets par bloc de compétences">
-          <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Tous · 9</button>
+          <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Tous · 6</button>
           <button class="filter-btn" type="button" data-filter="pilotage" aria-pressed="false">Pilotage</button>
           <button class="filter-btn" type="button" data-filter="infrastructure" aria-pressed="false">Infrastructure</button>
           <button class="filter-btn" type="button" data-filter="creation" aria-pressed="false">Création de modèles</button>
           <button class="filter-btn" type="button" data-filter="optimisation" aria-pressed="false">Optimisation</button>
         </div>
-        <div class="project-status" id="projectStatus" role="status" aria-live="polite">9 projets affichés</div>
+        <div class="project-status" id="projectStatus" role="status" aria-live="polite">6 projets affichés</div>
         <div class="projects-grid" id="projectsGrid">
           <article class="p-card" data-category="creation">
-            <div><div class="p-bottom"><span class="p-kind">Création de modèles</span></div>
+            <div><div class="project-art"><img src="visuels/project-energy.png" alt="" width="340" height="170" loading="lazy" decoding="async"></div><div class="p-bottom"><span class="p-kind">Création de modèles</span></div>
             <h3>Prédire la consommation énergétique des bâtiments de Seattle</h3><p class="p-official">Anticipez les besoins en consommation de bâtiments</p><p class="p-desc">Estimer la consommation d'un bâtiment à partir de ses caractéristiques, sans relevé de compteur.</p><p class="p-proof">R² = 0,72 (Gradient Boosting, 6 modèles comparés)</p></div>
             <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>Régression</span><span>scikit-learn</span><span>Feature engineering</span></div><div class="p-links"><a class="project-link" href="https://github.com/fatimaadda2878/seattle-energy-prediction" target="_blank" rel="noopener noreferrer" aria-label="Voir le code sur GitHub">Voir le code ↗</a></div></div>
           </article>
           <article class="p-card" data-category="creation">
-            <div><div class="p-bottom"><span class="p-kind">Création de modèles</span></div>
+            <div><div class="project-art"><img src="visuels/project-people.png" alt="" width="340" height="170" loading="lazy" decoding="async"></div><div class="p-bottom"><span class="p-kind">Création de modèles</span></div>
             <h3>Comprendre et anticiper les départs de salariés</h3><p class="p-official">Classifiez automatiquement des informations</p><p class="p-desc">Croiser 3 sources RH pour expliquer les démissions et repérer les salariés à risque.</p><p class="p-proof">1 départ sur 2 détecté, contre 0 pour la référence ; heures supplémentaires = facteur n°1 (30 % de départs contre 10 %)</p></div>
             <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>Classification</span><span>SMOTE</span><span>SHAP</span></div><div class="p-links"><a class="project-link" href="https://github.com/fatimaadda2878/hr-attrition-prediction" target="_blank" rel="noopener noreferrer" aria-label="Voir le code sur GitHub">Voir le code ↗</a></div></div>
           </article>
           <article class="p-card" data-category="infrastructure">
-            <div><div class="p-bottom"><span class="p-kind">Infrastructure et déploiement</span></div>
+            <div><div class="project-art"><img src="visuels/project-deploy.png" alt="" width="340" height="170" loading="lazy" decoding="async"></div><div class="p-bottom"><span class="p-kind">Infrastructure et déploiement</span></div>
             <h3>Déployer un modèle en production</h3><p class="p-official">Déployez un modèle de Machine Learning</p><p class="p-desc">Servir le modèle de Seattle via une API, avec base de données, tests et déploiement automatique.</p><p class="p-proof">API FastAPI + PostgreSQL, Docker, CI/CD vers Hugging Face</p></div>
             <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>FastAPI</span><span>Docker</span><span>CI/CD</span></div><div class="p-links"><a class="project-link" href="https://github.com/fatimaadda2878/seattle-energy-prediction" target="_blank" rel="noopener noreferrer" aria-label="Voir le code sur GitHub">Voir le code ↗</a></div></div>
           </article>
-          <article class="p-card" data-category="creation">
-            <div><div class="p-bottom"><span class="p-kind">Création de modèles</span></div>
-            <h3>Détecter des tumeurs sur IRM avec 100 images annotées</h3><p class="p-official">Labellisez et appliquez des approches semi-supervisées en traitement d'images</p><p class="p-desc">Tirer parti de 1 400 IRM non annotées grâce au pseudo-étiquetage et au transfert d'apprentissage.</p><p class="p-proof">Rappel cancer = 0,87 ; fuite de données (32 doublons) détectée et corrigée</p></div>
-            <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>PyTorch</span><span>Semi-supervisé</span><span>Transfer learning</span></div><div class="p-links"><a class="project-link" href="https://github.com/fatimaadda2878/BrainScanAI" target="_blank" rel="noopener noreferrer" aria-label="Voir le code sur GitHub">Voir le code ↗</a></div></div>
-          </article>
+          
+          
+          
           <article class="p-card" data-category="optimisation">
-            <div><div class="p-bottom"><span class="p-kind">Optimisation des modèles</span></div>
-            <h3>Prédire la solubilité des protéines recombinantes</h3><p class="p-official">Confirmez vos compétences en MLOps</p><p class="p-desc">Projet phare, détaillé plus haut.</p><p class="p-proof">AUC = 0,83, démo en ligne</p></div>
-            <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>ESM-2</span><span>PyTorch</span><span>GitHub Actions</span></div><div class="p-links"><a class="project-link" href="https://github.com/fatimaadda2878/protein-solubility-api" target="_blank" rel="noopener noreferrer" aria-label="Voir le code sur GitHub">Voir le code ↗</a><a class="project-link" href="https://huggingface.co/spaces/fatimaadda2878/protein-solubility-esm150-ft" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir la démo">Démo ↗</a></div></div>
-          </article>
-          <article class="p-card" data-category="creation">
-            <div><div class="p-bottom"><span class="p-kind">Création de modèles</span></div>
-            <h3>Assistant culturel par IA générative (RAG)</h3><p class="p-official">Concevez et déployez un système RAG</p><p class="p-desc">Interroger en langage naturel les événements culturels parisiens.</p><p class="p-proof">9 495 événements indexés, API déployée sur Render, 15/15 tests</p></div>
-            <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>RAG</span><span>FAISS</span><span>Mistral</span><span>FastAPI</span></div><div class="p-links"><a class="project-link" href="https://github.com/fatimaadda2878/puls-events-rag" target="_blank" rel="noopener noreferrer" aria-label="Voir le code sur GitHub">Voir le code ↗</a><a class="project-link" href="https://puls-events-rag.onrender.com/docs" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir la démo">Démo ↗</a></div></div>
-          </article>
-          <article class="p-card" data-category="optimisation">
-            <div><div class="p-bottom"><span class="p-kind">Optimisation des modèles</span></div>
+            <div><div class="project-art"><img src="visuels/project-nba.png" alt="" width="340" height="170" loading="lazy" decoding="async"></div><div class="p-bottom"><span class="p-kind">Optimisation des modèles</span></div>
             <h3>Évaluer et améliorer un assistant IA</h3><p class="p-official">Évaluez les performances d'un LLM</p><p class="p-desc">Mesurer avec RAGAS l'apport d'un outil SQL à un chatbot d'analyse NBA.</p><p class="p-proof">Rappel du contexte 0,35 → 0,58 ; pertinence des réponses 0,30 → 0,52</p></div>
             <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>LLM</span><span>RAGAS</span><span>SQL</span></div><div class="p-links"><a class="project-link" href="https://github.com/fatimaadda2878/sportsee-rag-nba-assistant" target="_blank" rel="noopener noreferrer" aria-label="Voir le code sur GitHub">Voir le code ↗</a></div></div>
           </article>
           <article class="p-card" data-category="pilotage">
-            <div><div class="p-bottom"><span class="p-kind">Pilotage de projet data</span></div>
+            <div><div class="project-art"><img src="visuels/project-fashion.png" alt="" width="340" height="170" loading="lazy" decoding="async"></div><div class="p-bottom"><span class="p-kind">Pilotage de projet data</span></div>
             <h3>Cadrer un projet d'IA pour un comité de direction</h3><p class="p-official">Réalisez le cadrage d'un projet IA</p><p class="p-desc">Recommandation vestimentaire par photo : périmètre, architecture Azure, budget, RGPD.</p><p class="p-proof">POC + MVP chiffrés à 77,6 k€, rentabilité au mois 18</p></div>
             <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>Cadrage</span><span>Azure</span><span>RGPD</span></div><div class="p-links"><a class="project-link" href="https://github.com/fatimaadda2878/ai-poc-scoping-visual-recommender" target="_blank" rel="noopener noreferrer" aria-label="Voir le code sur GitHub">Voir le code ↗</a></div></div>
           </article>
           <article class="p-card" data-category="optimisation">
-            <div><div class="p-bottom"><span class="p-kind">Optimisation des modèles</span></div>
+            <div><div class="project-art"><img src="visuels/project-crops.png" alt="" width="340" height="170" loading="lazy" decoding="async"></div><div class="p-bottom"><span class="p-kind">Optimisation des modèles</span></div>
             <h3>Aider les agriculteurs à choisir leurs cultures</h3><p class="p-official">Concevez un système de recommandations pour une agriculture optimisée par les données</p><p class="p-desc">Prédire le rendement de 6 cultures selon la parcelle et les classer, application en ligne.</p><p class="p-proof">Erreur typique de 0,50 t/ha ; suivi MLflow, CI/CD, démo Streamlit</p></div>
             <div class="p-bottom"><div class="p-tags" aria-label="Thèmes abordés"><span>Régression</span><span>MLflow</span><span>Streamlit</span></div><div class="p-links"><a class="project-link" href="https://github.com/fatimaadda2878/agritech-crop-recommender" target="_blank" rel="noopener noreferrer" aria-label="Voir le code sur GitHub">Voir le code ↗</a><a class="project-link" href="https://agritech-crop-recommender-api.streamlit.app/" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir la démo">Démo ↗</a></div></div>
           </article>
         </div>
       </section>
       <section class="section" id="competences" aria-labelledby="skills-title">
-        <div class="section-top"><div><div class="eyebrow">Compétences</div><h2 id="skills-title">Ce que je sais faire,<br>et où le vérifier.</h2></div><span class="section-num">04 / 07</span></div>
+        <div class="section-top"><div><div class="eyebrow">Compétences</div><h2 id="skills-title">Ce que je sais faire,<br>et où le vérifier.</h2></div></div><nav class="proof-nav" aria-label="Voir les projets associés"><a href="#projet-phare">Modèle et déploiement →</a><a href="#case-brain-title">Imagerie et évaluation →</a><a href="#case-rag-title">Recherche et IA générative →</a></nav>
         <p class="section-intro">Six domaines, chacun relié aux projets publics qui le démontrent.</p>
         <div class="skills-grid" id="skillsGrid" aria-label="Compétences">
-<section class="skill-panel"><h3>Analyser et préparer les données</h3><p class="cap-desc">Explorer, nettoyer, croiser plusieurs sources et rendre les résultats lisibles pour le métier.</p><div class="technology" aria-label="Outils"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">NumPy</span><span class="chip">SQL / PostgreSQL</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span></div><p class="p-proof cap-proof"><strong>Démontré dans :</strong> <a href="https://github.com/fatimaadda2878/hr-attrition-prediction" target="_blank" rel="noopener noreferrer">Attrition RH</a> · <a href="https://github.com/fatimaadda2878/seattle-energy-prediction" target="_blank" rel="noopener noreferrer">Seattle</a></p></section>
-<section class="skill-panel"><h3>Construire et évaluer des modèles</h3><p class="cap-desc">Comparer des modèles, gérer le déséquilibre des classes, choisir un seuil selon le coût métier et expliquer les prédictions.</p><div class="technology" aria-label="Outils"><span class="chip">scikit-learn</span><span class="chip">LightGBM</span><span class="chip">XGBoost</span><span class="chip">Optuna</span><span class="chip">SMOTE</span><span class="chip">SHAP</span></div><p class="p-proof cap-proof"><strong>Démontré dans :</strong> <a href="https://github.com/fatimaadda2878/hr-attrition-prediction" target="_blank" rel="noopener noreferrer">Attrition RH</a> · <a href="https://github.com/fatimaadda2878/seattle-energy-prediction" target="_blank" rel="noopener noreferrer">Seattle</a> · <a href="https://github.com/fatimaadda2878/agritech-crop-recommender" target="_blank" rel="noopener noreferrer">Agritech</a></p></section>
-<section class="skill-panel"><h3>Deep learning et IA générative</h3><p class="cap-desc">Adapter des réseaux pré-entraînés à peu de données, fine-tuner un modèle de langage protéique, construire et évaluer des assistants RAG.</p><div class="technology" aria-label="Outils"><span class="chip">PyTorch</span><span class="chip">CNN</span><span class="chip">Transfer learning</span><span class="chip">ESM-2</span><span class="chip">RAG</span><span class="chip">LangChain</span><span class="chip">FAISS</span><span class="chip">Mistral</span><span class="chip">RAGAS</span></div><p class="p-proof cap-proof"><strong>Démontré dans :</strong> <a href="https://github.com/fatimaadda2878/protein-solubility-api" target="_blank" rel="noopener noreferrer">Solubilité protéique</a> · <a href="https://github.com/fatimaadda2878/BrainScanAI" target="_blank" rel="noopener noreferrer">IRM</a> · <a href="https://github.com/fatimaadda2878/puls-events-rag" target="_blank" rel="noopener noreferrer">Assistant événements (RAG)</a> · <a href="https://github.com/fatimaadda2878/sportsee-rag-nba-assistant" target="_blank" rel="noopener noreferrer">SportSee</a></p></section>
-<section class="skill-panel"><h3>Mettre un modèle en production</h3><p class="cap-desc">Suivre les expériences, exposer un modèle via une API, tester et déployer automatiquement.</p><div class="technology" aria-label="Outils"><span class="chip">MLflow</span><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">GitHub Actions</span><span class="chip">pytest</span><span class="chip">Hugging Face</span><span class="chip">Render</span><span class="chip">Streamlit</span></div><p class="p-proof cap-proof"><strong>Démontré dans :</strong> <a href="https://github.com/fatimaadda2878/seattle-energy-prediction" target="_blank" rel="noopener noreferrer">Seattle</a> · <a href="https://github.com/fatimaadda2878/agritech-crop-recommender" target="_blank" rel="noopener noreferrer">Agritech</a> · <a href="https://github.com/fatimaadda2878/protein-solubility-api" target="_blank" rel="noopener noreferrer">Solubilité protéique</a></p></section>
-<section class="skill-panel"><h3>Piloter un projet data</h3><p class="cap-desc">Traduire un besoin en périmètre de POC, critères de succès, budget, rentabilité et conformité RGPD.</p><div class="technology" aria-label="Outils"><span class="chip">Cadrage</span><span class="chip">Chiffrage</span><span class="chip">ROI</span><span class="chip">RGPD</span><span class="chip">CRISP-DM</span><span class="chip">Agile</span></div><p class="p-proof cap-proof"><strong>Démontré dans :</strong> <a href="https://github.com/fatimaadda2878/ai-poc-scoping-visual-recommender" target="_blank" rel="noopener noreferrer">Cadrage IA</a></p></section>
-<section class="skill-panel"><h3>Expertise sciences du vivant</h3><p class="cap-desc">Cinq ans de R&amp;D : je sais d'où viennent les données expérimentales et ce qu'elles valent.</p><div class="technology" aria-label="Outils"><span class="chip">Biochimie des protéines</span><span class="chip">Expression E. coli, Sf9, HEK, CHO</span><span class="chip">Purification HPLC</span><span class="chip">Cristallographie</span><span class="chip">Qualité et traçabilité</span></div><p class="p-proof cap-proof"><strong>Démontré dans :</strong> 5 ans en laboratoire académique et CRO</p></section>
+<section class="skill-panel"><div class="skill-art"><img src="visuels/skill-data.png" alt="" width="1536" height="1024" loading="lazy" decoding="async"></div><h3>Analyser et préparer les données</h3><p class="cap-desc">Explorer, nettoyer, croiser plusieurs sources et rendre les résultats lisibles pour le métier.</p><div class="technology" aria-label="Outils"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">NumPy</span><span class="chip">SQL / PostgreSQL</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span></div><p class="p-proof cap-proof"><strong>Démontré dans :</strong> <a href="https://github.com/fatimaadda2878/hr-attrition-prediction" target="_blank" rel="noopener noreferrer">Attrition RH</a> · <a href="https://github.com/fatimaadda2878/seattle-energy-prediction" target="_blank" rel="noopener noreferrer">Seattle</a></p></section>
+<section class="skill-panel"><div class="skill-art"><img src="visuels/skill-models.png" alt="" width="1536" height="1024" loading="lazy" decoding="async"></div><h3>Construire et évaluer des modèles</h3><p class="cap-desc">Comparer des modèles, gérer le déséquilibre des classes, choisir un seuil selon le coût métier et expliquer les prédictions.</p><div class="technology" aria-label="Outils"><span class="chip">scikit-learn</span><span class="chip">LightGBM</span><span class="chip">XGBoost</span><span class="chip">Optuna</span><span class="chip">SMOTE</span><span class="chip">SHAP</span></div><p class="p-proof cap-proof"><strong>Démontré dans :</strong> <a href="https://github.com/fatimaadda2878/hr-attrition-prediction" target="_blank" rel="noopener noreferrer">Attrition RH</a> · <a href="https://github.com/fatimaadda2878/seattle-energy-prediction" target="_blank" rel="noopener noreferrer">Seattle</a> · <a href="https://github.com/fatimaadda2878/agritech-crop-recommender" target="_blank" rel="noopener noreferrer">Agritech</a></p></section>
+<section class="skill-panel"><div class="skill-art"><img src="visuels/skill-deep-learning.png" alt="" width="1536" height="1024" loading="lazy" decoding="async"></div><h3>Deep learning et IA générative</h3><p class="cap-desc">Adapter des réseaux pré-entraînés à peu de données, fine-tuner un modèle de langage protéique, construire et évaluer des assistants RAG.</p><div class="technology" aria-label="Outils"><span class="chip">PyTorch</span><span class="chip">CNN</span><span class="chip">Transfer learning</span><span class="chip">ESM-2</span><span class="chip">RAG</span><span class="chip">LangChain</span><span class="chip">FAISS</span><span class="chip">Mistral</span><span class="chip">RAGAS</span></div><p class="p-proof cap-proof"><strong>Démontré dans :</strong> <a href="https://github.com/fatimaadda2878/protein-solubility-api" target="_blank" rel="noopener noreferrer">Solubilité protéique</a> · <a href="https://github.com/fatimaadda2878/BrainScanAI" target="_blank" rel="noopener noreferrer">IRM</a> · <a href="https://github.com/fatimaadda2878/puls-events-rag" target="_blank" rel="noopener noreferrer">Assistant événements (RAG)</a> · <a href="https://github.com/fatimaadda2878/sportsee-rag-nba-assistant" target="_blank" rel="noopener noreferrer">SportSee</a></p></section>
+<section class="skill-panel"><div class="skill-art"><img src="visuels/skill-deployment.png" alt="" width="1536" height="1024" loading="lazy" decoding="async"></div><h3>Mettre un modèle en production</h3><p class="cap-desc">Suivre les expériences, exposer un modèle via une API, tester et déployer automatiquement.</p><div class="technology" aria-label="Outils"><span class="chip">MLflow</span><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">GitHub Actions</span><span class="chip">pytest</span><span class="chip">Hugging Face</span><span class="chip">Render</span><span class="chip">Streamlit</span></div><p class="p-proof cap-proof"><strong>Démontré dans :</strong> <a href="https://github.com/fatimaadda2878/seattle-energy-prediction" target="_blank" rel="noopener noreferrer">Seattle</a> · <a href="https://github.com/fatimaadda2878/agritech-crop-recommender" target="_blank" rel="noopener noreferrer">Agritech</a> · <a href="https://github.com/fatimaadda2878/protein-solubility-api" target="_blank" rel="noopener noreferrer">Solubilité protéique</a></p></section>
+<section class="skill-panel"><div class="skill-art"><img src="visuels/skill-planning.png" alt="" width="1536" height="1024" loading="lazy" decoding="async"></div><h3>Piloter un projet data</h3><p class="cap-desc">Traduire un besoin en périmètre de POC, critères de succès, budget, rentabilité et conformité RGPD.</p><div class="technology" aria-label="Outils"><span class="chip">Cadrage</span><span class="chip">Chiffrage</span><span class="chip">ROI</span><span class="chip">RGPD</span><span class="chip">CRISP-DM</span><span class="chip">Agile</span></div><p class="p-proof cap-proof"><strong>Démontré dans :</strong> <a href="https://github.com/fatimaadda2878/ai-poc-scoping-visual-recommender" target="_blank" rel="noopener noreferrer">Cadrage IA</a></p></section>
+<section class="skill-panel"><div class="skill-art"><img src="visuels/skill-biology.png" alt="" width="1536" height="1024" loading="lazy" decoding="async"></div><h3>Expertise sciences du vivant</h3><p class="cap-desc">Cinq ans de R&amp;D : je sais d'où viennent les données expérimentales et ce qu'elles valent.</p><div class="technology" aria-label="Outils"><span class="chip">Biochimie des protéines</span><span class="chip">Expression E. coli, Sf9, HEK, CHO</span><span class="chip">Purification HPLC</span><span class="chip">Cristallographie</span><span class="chip">Qualité et traçabilité</span></div><p class="p-proof cap-proof"><strong>Démontré dans :</strong> 5 ans en laboratoire académique et CRO</p></section>
 </div>
-        <p class="cap-more"><strong>En cours d'approfondissement :</strong> cloud (Azure), orchestration, AI Act. <strong>Langues :</strong> français, anglais (C1), arabe (C1).</p>
+        <p class="cap-more"><strong>Langues :</strong> français, anglais (C1), arabe (C1).</p>
       </section>
       <section class="section" id="savoir-etre" aria-labelledby="soft-title">
-        <div class="section-top"><div><div class="eyebrow">Compétences transversales</div><h2 id="soft-title">Ce que le laboratoire m'a appris,<br>et que j'applique aux données.</h2></div><span class="section-num">05 / 07</span></div>
+        <div class="section-top"><div><div class="eyebrow">Compétences transversales</div><h2 id="soft-title">Ce que le laboratoire m'a appris,<br>et que j'applique aux données.</h2></div></div>
         <p class="section-intro" style="margin-bottom:24px">Six qualités forgées en R&amp;D, chacune illustrée par une situation réelle de labo et son équivalent en projet data.</p>
         <div class="soft-grid">
           <article class="soft-card"><h3>Esprit d'analyse</h3><div class="soft-pair"><strong>Labo</strong><span>Diagnostiquer un protocole de purification en échec et isoler la variable en cause.</span></div><div class="soft-pair"><strong>Data</strong><span>Comprendre le plafonnement d'un modèle et relier le seuil de décision au coût métier.</span></div></article>
@@ -744,7 +842,7 @@
         </div>
       </section>
       <section class="section" id="recul" aria-labelledby="reflection-title">
-        <div class="section-top"><div><div class="eyebrow">Prise de recul</div><h2 id="reflection-title">Ce que la reconversion<br>a changé dans ma pratique.</h2></div><span class="section-num">06 / 07</span></div>
+        <div class="section-top"><div><div class="eyebrow">Prise de recul</div><h2 id="reflection-title">Ce que la reconversion<br>a changé dans ma pratique.</h2></div></div>
         <div class="retrospective"><div class="retro-card"><small>Avant la formation</small><p>« Le Data Scientist construit le meilleur modèle possible. »</p></div><div class="retro-card strong"><small>Aujourd'hui</small><p>« Il résout un problème métier de bout en bout. Le modèle n'est qu'une étape. »</p></div></div>
         <div class="reflection">
           <div><h3>Ce que je sais faire aujourd'hui</h3><p>Livrer une chaîne complète et traçable, lire les métriques avec un œil critique, et défendre une décision métier, y compris celle de ne pas déployer.</p></div>
